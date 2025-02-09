@@ -16,16 +16,16 @@ function About() {
         style={{
           backgroundImage: `url(${ohipImg1})`,
           backgroundSize: "cover",
-          // backgroundPosition: "center",
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         <div className="absolute bg-blue-900/30 inset-0"></div>
         <div className="z-10">
-          <h2 className="text-white text-6xl font-semibold text-center mb-4">
+          <h2 className="text-white text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
             About One Sound Revival TV
           </h2>
-          <p className="text-white max-w-3xl text-[14px] text-center">
+          <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
             quisquam corporis exercitationem repudiandae. Maiores facilis
             doloribus ipsa aliquid similique corrupti suscipit tempora
@@ -43,7 +43,7 @@ function About() {
         <h2 className="text-center text-3xl uppercase font-semibold my-10">
           ABout OHIP
         </h2>
-        <p className="max-w-6xl mx-auto text-lg text-pretty text-center">
+        <p className="max-w-6xl mx-auto text-lg text-pretty text-center max-[860px]:px-8">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis
           aliquid eum, atque exercitationem, necessitatibus, quis suscipit iure
           saepe earum repudiandae quo. Doloremque, architecto? Repellat corporis
@@ -56,10 +56,10 @@ function About() {
           soluta? Rem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </section>
-      <section className="flex justify-center items-center gap-5 my-10 py-20 h-screen">
-        <div className="max-w-1/3">
+      <section className="min-h-screen flex justify-center gap-16 items-center max-[860px]:mt-5 max-[860px]:flex-col-reverse">
+        <div className="max-w-1/3 max-[860px]:max-w-full p-10">
           <h2 className="text-center text-3xl font-semibold mb-5">PURPOSE</h2>
-          <p className="text-lg">
+          <p className="text-lg text-center">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Consequuntur placeat harum, doloremque doloribus delectus suscipit
             ullam praesentium reiciendis mollitia consectetur quibusdam quae
@@ -72,10 +72,10 @@ function About() {
         <img
           src={ohipImg2}
           alt="Packaging food stuff to give"
-          className="h-[600px] object-cover"
+          className="h-[600px] object-cover max-[820px]:w-full px-10"
         />
       </section>
-      <section className="flex justify-center items-center gap-10 p-20">
+      <section className="flex justify-center items-center gap-10 p-20 flex-wrap">
         <img src={ohipImg5} alt="" className="w-[300px]" />
         <img src={ohipImg6} alt="" className="w-[300px]" />
         <img src={ohipImg7} alt="" className="w-[300px]" />

@@ -23,10 +23,10 @@ function Home() {
       >
         <div className="absolute bg-blue-900/30 inset-0"></div>
         <div className="z-10">
-          <h2 className="text-white text-6xl min-[820px]:text-5xl font-semibold text-center mb-4">
+          <h2 className="text-white text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
             One Sound Revival TV
           </h2>
-          <p className="text-white max-w-3xl min-[820px]:max-w-xl text-[14px] text-center">
+          <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
             quisquam corporis exercitationem repudiandae. Maiores facilis
             doloribus ipsa aliquid similique corrupti suscipit tempora
@@ -40,13 +40,13 @@ function Home() {
           </Link>
         </div>
       </section>
-      <section className="min-h-screen flex justify-center gap-16 items-center min-[820px]:flex-col-reverse">
+      <section className="min-h-screen flex justify-center gap-16 items-center max-[860px]:flex-col-reverse">
         <img
           src={ohipImg2}
           alt="Packaging food stuff to give"
-          className="h-[600px] object-cover min-[820px]:w-full px-10"
+          className="h-[600px] object-cover max-[820px]:w-full px-10"
         />
-        <div className="max-w-1/3 min-[820px]:max-w-full px-10">
+        <div className="max-w-1/3 max-[860px]:max-w-full p-10">
           <h2 className="text-3xl uppercase mb-5 font-bold">About OHIP</h2>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
@@ -64,7 +64,7 @@ function Home() {
           </Link>
         </div>
       </section>
-      <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20 min-[820px]:pb-28 flex-wrap">
+      <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20 max-[860px]:pb-28 max-[860px]:flex-wrap">
         <div className="text-center">
           <VscWorkspaceTrusted className="text-6xl mx-auto mb-2 text-red-500" />
           <p className="text-sm">
@@ -103,7 +103,7 @@ function Home() {
           </h2>
         </div>
       </section>
-      <section className="relative min-h-[30vh] text-white text-center flex justify-center items-center gap-10 px-20 bg-red-600">
+      <section className="relative min-h-[30vh] text-white text-center flex justify-center items-center gap-10 p-20 max-[490px]:px-8 bg-red-600">
         <img
           src={ohipImg3}
           alt="Prophet Isaiah Mac Wealth"
@@ -115,14 +115,14 @@ function Home() {
           repellendus? Ex harum repellat odio labore sapiente, dolorum velit.
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
           at modi eaque itaque veniam aspernatur nesciunt unde temporibus dolore
-          optio.
+          option.
         </p>
       </section>
-      <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20">
+      <section className="py-20 flex justify-center items-center gap-10 px-20">
         <img
           src={ohipImg4}
           alt="become a partner flyer"
-          className="max-w-4xl"
+          className="max-w-4xl max-[860px]:w-full"
         />
       </section>
       <Footer />
