@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/one-sound-logo.png";
 import { CiMenuFries } from "react-icons/ci";
+import { useState } from "react";
+import { IoClose } from "react-icons/io5";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <header className="bg-white shadow-md p-4 px-8 flex justify-between items-center fixed w-full z-50">
       <img src={logo} alt="One Sound Revival TV logo" className="w-70" />
@@ -41,7 +47,43 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <CiMenuFries className="max-[860px]:block hidden text-3xl font-extrabold" />
+
+      {!isMenuOpen && (
+        <CiMenuFries
+          className="max-[860px]:block hidden text-3xl font-extrabold"
+          onClick={toggleMenu}
+        />
+      )}
+      {isMenuOpen && (
+        <IoClose
+          className="hidden max-[929px]:flex text-4xl"
+          onClick={() => {
+            toggleMenu();
+            setIsMenuOpen(false);
+          }}
+        />
+      )}
+      {isMenuOpen && (
+        <div
+          className="absolute hidden max-[929px]:flex top-full left-0 w-full bg-white shadow-md"
+          onClick={toggleMenu}
+        >
+          <ul className="p-4 text-black">
+            <li className="py-2">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="py-2">
+              <Link to="/programmes">Programmes</Link>
+            </li>
+            <li className="py-2">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="py-2">
+              <Link to="/partnership">Partnership</Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

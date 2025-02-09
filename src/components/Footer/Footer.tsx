@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-black text-white p-10 px-20">
+    <footer className="bg-black text-white p-10 px-20 max-[490px]:p-8">
       <div className="flex justify-between flex-wrap gap-10">
         <div className="">
           <div className="">
