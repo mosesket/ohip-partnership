@@ -10,7 +10,7 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="bg-white shadow-md p-4 px-8 flex justify-between items-center fixed w-full z-50">
+    <header className="bg-white shadow-md p-4 px-8 flex justify-between items-center fixed w-full z-[1000]">
       <img src={logo} alt="One Sound Revival TV logo" className="w-70" />
       <nav className="hidden min-[860px]:block">
         <ul className="flex gap-10 text-lg">

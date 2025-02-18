@@ -12,7 +12,7 @@ function Hero() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-black/50 rounded-3xl"></div>
       <div className="z-50 max-w-[700px]">
         <span className="bg-red-500 text-sm p-1 rounded-sm font-medium">
           Daily Devotionals
