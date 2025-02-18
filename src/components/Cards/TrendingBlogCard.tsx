@@ -18,21 +18,21 @@ function TrendingBlogCard({
   content,
 }: TrendingBlogCardProps) {
   return (
-    <div className="">
+    <div className="flex gap-2 justify-between items-center">
       <div
-        className={`relative w-[230px] h-[200px] rounded-2xl overflow-hidden mt-3 ${className} shadow-2xl`}
+        className={`relative w-[430px] h-[150px] rounded-sm overflow-hidden mt-3 ${className} shadow-2xl`}
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       ></div>
-      <div className="">
-        <span className="font-mono flex gap-3 items-center">
+      <div className="w-full">
+        <span className="flex gap-1 text-sm items-center">
           <HiOutlineCalendarDateRange /> {date} - <CiTimer /> {readTime} read
         </span>
-        <h2>{title}</h2>
-        <p>{content}</p>
+        <h2 className="text-xl font-semibold">{title}</h2>
+        <p className="mt-3 text-sm text-gray-500">{content}</p>
       </div>
     </div>
   );

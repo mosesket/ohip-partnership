@@ -1,4 +1,5 @@
 import Hero from "../components/Blog Components/Hero";
+import Section3 from "../components/Blog Components/Section3";
 import Trending from "../components/Blog Components/Trending";
 
 function Programmes() {
@@ -6,6 +7,7 @@ function Programmes() {
     <>
       <Hero />
       <Trending />
+      <Section3 />
     </>
   );
 }

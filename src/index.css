@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-body {
-  @apply bg-gray-100;
-}
-
 /* Scrollbar width */
 ::-webkit-scrollbar {
   width: 4px; /* Adjust width */
