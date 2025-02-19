@@ -15,7 +15,7 @@ function HeroBlogCard({
 }: HeroBlogCardProps) {
   return (
     <div
-      className={`relative w-[230px] h-[200px] rounded-2xl overflow-hidden mt-3 ${className} shadow-2xl`}
+      className={`relative w-[230px] max-[950px]:w-full h-[200px] rounded-2xl overflow-hidden max-[950px]:m-0 max-[950px]:h-[27rem] mt-3 ${className} shadow-2xl`}
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
