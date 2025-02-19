@@ -4,7 +4,7 @@ function LatestBlog() {
   return (
     <section className="max-w-6xl mx-auto py-10 mt-20">
       <h2 className="text-3xl font-semibold mb-5">Latest Blog</h2>
-      <div className="flex gap-5 flex-wrap justify-between">
+      <div className="flex gap-2 flex-wrap justify-center">
         <BlogCard
           backgroundImage="https://cdn.pixabay.com/photo/2025/02/02/14/06/bird-9376831_1280.jpg"
           title="The Power of Worship: How Praising God Transforms Your Life"

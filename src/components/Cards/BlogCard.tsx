@@ -18,7 +18,7 @@ function BlogCard({
   content,
 }: BlogCardProps) {
   return (
-    <div className="w-full max-w-[20rem]">
+    <div className="w-full min-[1000px]:max-w-[23rem] min-[800px]:max-w-[25rem] max-[800px]:max-w-full px-8">
       <div
         className={`relative h-[200px] w-full flex-col rounded-sm overflow-hidden shadow-2xl flex justify-between p-4`}
         style={{
