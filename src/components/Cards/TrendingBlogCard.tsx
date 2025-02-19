@@ -18,9 +18,9 @@ function TrendingBlogCard({
   content,
 }: TrendingBlogCardProps) {
   return (
-    <div className="flex gap-2 justify-between items-center">
+    <div className="flex gap-2 justify-between items-center max-[550px]:flex-col max-[550px]:max-w-[430px]">
       <div
-        className={`relative w-[430px] h-[150px] rounded-sm overflow-hidden mt-3 ${className} shadow-2xl`}
+        className={`relative max-w-[430px] w-full h-[150px] rounded-sm overflow-hidden mt-3 ${className} shadow-2xl`}
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
