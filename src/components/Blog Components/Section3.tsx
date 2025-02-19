@@ -15,14 +15,14 @@ function Section3() {
         <div className="border-2 border-white py-1 px-2 text-white z-50 self-start text-sm">
           SUNDAY SERVICE
         </div>
-        <div className="z-50 w-2/3">
+        <div className="z-50">
           <span className="flex gap-2 text-sm items-center text-white">
             <HiOutlineCalendarDateRange /> Nov 5 - <CiTimer /> 20mins read
           </span>
           <h2 className="text-4xl font-extrabold text-white my-4">
             The Power of Worship: How Praising God Transforms Your Life
           </h2>
-          <p className="text-gray-300 text-sm">
+          <p className="text-gray-300 text-sm pt-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             necessitatibus dolorum neque ducimus ipsum tempore, blanditiis magni
             modi ex sint voluptate iure, possimus quod nobis natus suscipit

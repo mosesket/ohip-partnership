@@ -31,7 +31,7 @@ function Trending() {
           />
         </div>
         <div
-          className={`relative h-full max-w-[30rem] flex-col rounded-sm overflow-hidden shadow-2xl flex justify-between p-8`}
+          className={`relative max-[950px]:hidden h-full max-w-[30rem] flex-col rounded-sm overflow-hidden shadow-2xl flex justify-between p-8`}
           style={{
             backgroundImage: `url(https://cdn.pixabay.com/photo/2025/02/02/14/06/bird-9376831_1280.jpg)`,
             backgroundSize: "cover",
@@ -46,7 +46,7 @@ function Trending() {
             <span className="flex gap-1 text-sm items-center text-white">
               <HiOutlineCalendarDateRange /> Nov 5 - <CiTimer /> 20mins read
             </span>
-            <h2 className="text-3xl font-bold text-white">
+            <h2 className="text-3xl max-[1100px]:text-2xl font-bold text-white">
               The Power of Worship: How Praising God Transforms Your Life
             </h2>
           </div>
