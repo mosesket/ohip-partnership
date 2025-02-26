@@ -100,8 +100,8 @@ export default function Carousel() {
       >
         {DEFAULT_ITEMS.map((item, i) => (
           <motion.div key={i} className="min-w-full">
-            <div className="flex justify-center max-[803px]:flex-col">
-              <div className="bg-[#060606] text-white w-full p-8">
+            <div className="flex justify-center max-[803px]:flex-col min-[803px]:max-h-[40rem]">
+              <div className="bg-[#060606] text-white w-full p-8 h-full">
                 <div className="">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full text-[#060606] bg-white">
                     {item.icon}

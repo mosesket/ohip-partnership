@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo/one-sound-logo.png";
+import logo from "../../assets/logo/GGP_logo.png";
 import { CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 
 function Header() {
@@ -10,8 +11,12 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="bg-white shadow-md p-4 px-8 flex justify-between items-center fixed w-full z-[1000]">
-      <img src={logo} alt="One Sound Revival TV logo" className="w-70" />
+    <header className="bg-white shadow-md p-4 px-8 flex justify-between items-center fixed w-full z-[1000] h-24">
+      <img
+        src={logo}
+        alt="One Sound Revival TV logo"
+        className="w-25 -rotate-90"
+      />
       <nav className="hidden min-[860px]:block">
         <ul className="flex gap-10 text-lg">
           <li>
@@ -19,10 +24,53 @@ function Header() {
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/programmes" className="text-gray-700 hover:text-red-600">
-              Programmes
-            </Link>
+          <li className="relative group">
+            <button className="text-gray-700 hover:text-red-600 flex gap-2 items-center group">
+              Partnerships{" "}
+              <MdKeyboardArrowDown className="group-hover:rotate-180" />
+            </button>
+            {/* Dropdown Menu */}
+            <ul className="absolute left-0 w-max bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-200">
+              <li>
+                <Link
+                  to="/why-become-a-partner"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                >
+                  Why Become a Partner
+                </Link>
+              </li>
+              <li>
+                <Link to="/g20" className="block px-4 py-2 hover:bg-gray-200">
+                  G20
+                </Link>
+              </li>
+              <li>
+                <Link to="/gpp" className="block px-4 py-2 hover:bg-gray-200">
+                  GPP
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/how-to-join"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                >
+                  How to Join
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/partnership-tiers"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                >
+                  Partnership Tiers
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="block px-4 py-2 hover:bg-gray-200">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link to="/resources" className="text-gray-700 hover:text-red-600">
