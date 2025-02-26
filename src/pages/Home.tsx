@@ -8,6 +8,7 @@ import { GiWorld } from "react-icons/gi";
 import { TbChartPie2 } from "react-icons/tb";
 import { IoIosPeople } from "react-icons/io";
 import Footer from "../components/Footer/Footer";
+import Carousel from "../components/Animation/Carousel/Carousel";
 
 function Home() {
   return (
@@ -64,7 +65,7 @@ function Home() {
           </Link>
         </div>
       </section>
-      <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20 max-[860px]:pb-28 max-[860px]:flex-wrap">
+      <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20 max-[860px]:pb-28 max-[860px]:mt-10 max-[860px]:flex-wrap">
         <div className="text-center">
           <VscWorkspaceTrusted className="text-6xl mx-auto mb-2 text-red-500" />
           <p className="text-sm">
@@ -124,6 +125,12 @@ function Home() {
           alt="become a partner flyer"
           className="max-w-4xl max-[860px]:w-full"
         />
+      </section>
+      <section>
+        <h2 className="text-2xl font-semibold text-center mb-10">
+          Testimonial & and Success Story
+        </h2>
+        <Carousel />
       </section>
       <Footer />
     </>

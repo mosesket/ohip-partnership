@@ -25,11 +25,8 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              to="/partnership"
-              className="text-gray-700 hover:text-red-600"
-            >
-              Partnership
+            <Link to="/resources" className="text-gray-700 hover:text-red-600">
+              Resources
             </Link>
           </li>
           <li>

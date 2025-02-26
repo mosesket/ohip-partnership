@@ -4,7 +4,7 @@ import Section3 from "../components/Blog Components/Section3";
 import Trending from "../components/Blog Components/Trending";
 import Footer from "../components/Footer/Footer";
 
-function Programmes() {
+function Resources() {
   return (
     <>
       <Hero />
@@ -16,4 +16,4 @@ function Programmes() {
   );
 }
 
-export default Programmes;
+export default Resources;
