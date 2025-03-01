@@ -18,6 +18,7 @@ import {
   FiLayers,
   FiLayout,
 } from "react-icons/fi";
+import Testimonial from "../components/Cards/Testimonial";
 
 export interface CarouselItem {
   title: string;
@@ -214,6 +215,7 @@ function Home() {
           nextSlide={nextSlide}
           DEFAULT_ITEMS={DEFAULT_ITEMS}
           index={index}
+          content={<Testimonial DEFAULT_ITEMS={DEFAULT_ITEMS} />}
         />
       </section>
       <Footer />
