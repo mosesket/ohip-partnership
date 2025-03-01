@@ -1,11 +1,65 @@
+"use client";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import g20 from "../assets/images/g20.jpg";
 import g20Icon1 from "../assets/Icons/Vector.png";
 import { Link } from "react-router-dom";
 import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
+import HowToPartner, { CarouselItem } from "../components/Cards/HowToPartner";
+import Carousel from "../components/Animation/Carousel/Carousel";
+import { useEffect, useState } from "react";
 
 function G20() {
+  const DEFAULT_ITEMS: CarouselItem[] = [
+    {
+      title: "Medium length section heading goes here",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+      image: "../../assets/images/how-to-partner.png",
+    },
+    {
+      title: "Medium length section heading goes here",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+
+      image: "../../assets/images/how-to-partner.png",
+    },
+    {
+      title: "Medium length section heading goes here",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+
+      image: "../../assets/images/how-to-partner.png",
+    },
+    {
+      title: "Medium length section heading goes here",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+
+      image: "../../assets/images/how-to-partner.png",
+    },
+    {
+      title: "Medium length section heading goes here",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+      image: "../../assets/images/how-to-partner.png",
+    },
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  const nextSlide = () => setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
+  const prevSlide = () =>
+    setIndex(
+      (prev) => (prev - 1 + DEFAULT_ITEMS.length) % DEFAULT_ITEMS.length
+    );
   return (
     <>
       <Header />
@@ -101,6 +155,21 @@ function G20() {
               Suspendisse varius enim in eros elementum tristique.
             </p>
           </div>
+        </section>
+        <section className="min-h-[70vh] mx-auto max-w-5xl py-20">
+          <h2 className="text-4xl mb-3 text-center font-medium">
+            How to Become a Partner
+          </h2>
+          <p className="text-center text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+          </p>
+          <Carousel
+            index={index}
+            nextSlide={nextSlide}
+            prevSlide={prevSlide}
+            DEFAULT_ITEMS={DEFAULT_ITEMS}
+            content={<HowToPartner DEFAULT_ITEMS={DEFAULT_ITEMS} />}
+          />
         </section>
       </main>
       <Footer />

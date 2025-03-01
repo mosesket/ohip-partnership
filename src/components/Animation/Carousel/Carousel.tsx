@@ -2,10 +2,9 @@
 import { motion } from "framer-motion";
 import { JSX, useRef } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { CarouselItem } from "../../../pages/Home";
 
 interface CarouselType {
-  DEFAULT_ITEMS: CarouselItem[];
+  DEFAULT_ITEMS: any[];
   index: number;
   nextSlide: () => void;
   prevSlide: () => void;
