@@ -5,7 +5,7 @@ function Footer() {
         <div className="">
           <div className="">
             <h2 className="text-2xl font-semibold mb-2">Contact</h2>
-            <p>becomeohippartner@gmail.com</p>
+            <p>becomepartner@gmail.com</p>
           </div>
           <div className="">
             <h2 className="text-2xl font-semibold mb-2 mt-3">Address</h2>

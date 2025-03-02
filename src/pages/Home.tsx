@@ -104,8 +104,8 @@ function Home() {
       >
         <div className="absolute bg-blue-900/30 inset-0"></div>
         <div className="z-10">
-          <h2 className="text-white text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
-            One Sound Revival TV
+          <h2 className="text-white uppercase text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
+            OHIP Partnership
           </h2>
           <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
