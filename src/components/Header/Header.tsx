@@ -151,7 +151,7 @@ function Header() {
                     </li>
                     <li>
                       <Link
-                        to="/g20"
+                        to="/partnership/g20"
                         className="block px-4 py-2 hover:bg-gray-200"
                       >
                         G20
