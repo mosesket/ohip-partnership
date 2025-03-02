@@ -22,7 +22,7 @@ function HowToPartner({ DEFAULT_ITEMS }: { DEFAULT_ITEMS: CarouselItem[] }) {
           >
             <div className="absolute bg-blue-900/40 inset-0"></div>
             <div className="z-10">
-              <h2 className="text-white text-3xl font-semibold mb-4">
+              <h2 className="text-white text-3xl font-semibold mb-4 max-[853px]:text-2xl">
                 {item.title}
               </h2>
               <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] max-[490px]:px-8">
