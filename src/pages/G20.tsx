@@ -6,8 +6,10 @@ import g20Icon1 from "../assets/Icons/Vector.png";
 import { Link } from "react-router-dom";
 import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
 import HowToPartner, { CarouselItem } from "../components/Cards/HowToPartner";
+import { FaCheck } from "react-icons/fa6";
 import Carousel from "../components/Animation/Carousel/Carousel";
 import { useEffect, useState } from "react";
+import howToPartnerImg1 from "../assets/images/how-to-partner.png";
 
 function G20() {
   const DEFAULT_ITEMS: CarouselItem[] = [
@@ -15,34 +17,34 @@ function G20() {
       title: "Medium length section heading goes here",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
-      image: "../../assets/images/how-to-partner.png",
+      image: howToPartnerImg1,
     },
     {
       title: "Medium length section heading goes here",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
 
-      image: "../../assets/images/how-to-partner.png",
+      image: howToPartnerImg1,
     },
     {
       title: "Medium length section heading goes here",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
 
-      image: "../../assets/images/how-to-partner.png",
+      image: howToPartnerImg1,
     },
     {
       title: "Medium length section heading goes here",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
 
-      image: "../../assets/images/how-to-partner.png",
+      image: howToPartnerImg1,
     },
     {
       title: "Medium length section heading goes here",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
-      image: "../../assets/images/how-to-partner.png",
+      image: howToPartnerImg1,
     },
   ];
   const [index, setIndex] = useState(0);
@@ -170,6 +172,169 @@ function G20() {
             DEFAULT_ITEMS={DEFAULT_ITEMS}
             content={<HowToPartner DEFAULT_ITEMS={DEFAULT_ITEMS} />}
           />
+        </section>
+        <section className="min-h-screen py-10">
+          <h2 className="text-4xl text-center mb-3 font-semibold">
+            Partnership Tiers
+          </h2>
+          <p className="text-sm text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+          </p>
+          <div className="flex flex-wrap justify-between gap-8 max-w-[60rem] mx-auto mt-10">
+            <div className="w-72 shadow-lg p-6 py-8">
+              <h2 className="text-2xl font-semibold text-center">Gold</h2>
+              <ul className="flex flex-col gap-2 mt-3">
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+              </ul>
+            </div>
+            <div className="w-72 shadow-lg p-6 py-8">
+              <h2 className="text-2xl font-semibold text-center">Silver</h2>
+              <ul className="flex flex-col gap-2 mt-3">
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+              </ul>
+            </div>
+            <div className="w-72 shadow-lg p-6 py-8">
+              <h2 className="text-2xl font-semibold text-center">Bronze</h2>
+              <ul className="flex flex-col gap-2 mt-3">
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+              </ul>
+            </div>
+            <div className="w-72 shadow-lg p-6 py-8">
+              <h2 className="text-2xl font-semibold text-center">Gold</h2>
+              <ul className="flex flex-col gap-2 mt-3">
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+              </ul>
+            </div>
+            <div className="w-72 shadow-lg p-6 py-8">
+              <h2 className="text-2xl font-semibold text-center">Silver</h2>
+              <ul className="flex flex-col gap-2 mt-3">
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+              </ul>
+            </div>
+            <div className="w-72 shadow-lg p-6 py-8">
+              <h2 className="text-2xl font-semibold text-center">Bronze</h2>
+              <ul className="flex flex-col gap-2 mt-3">
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheck />
+                  Feature text goes here
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button className="bg-black text-white py-2 px-10 rounded-md mx-auto mt-10 block">
+            Join Now
+          </button>
         </section>
       </main>
       <Footer />

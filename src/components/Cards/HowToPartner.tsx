@@ -20,7 +20,7 @@ function HowToPartner({ DEFAULT_ITEMS }: { DEFAULT_ITEMS: CarouselItem[] }) {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="absolute bg-blue-900/30 inset-0"></div>
+            <div className="absolute bg-blue-900/40 inset-0"></div>
             <div className="z-10">
               <h2 className="text-white text-3xl font-semibold mb-4">
                 {item.title}
