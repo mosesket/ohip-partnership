@@ -10,6 +10,7 @@ import { FaCheck } from "react-icons/fa6";
 import Carousel from "../components/Animation/Carousel/Carousel";
 import { useEffect, useState } from "react";
 import howToPartnerImg1 from "../assets/images/how-to-partner.png";
+import Accordion from "../components/Accordion";
 
 function G20() {
   const DEFAULT_ITEMS: CarouselItem[] = [
@@ -335,6 +336,17 @@ function G20() {
           <button className="bg-black text-white py-2 px-10 rounded-md mx-auto mt-10 block">
             Join Now
           </button>
+        </section>
+        <section className="py-20 min-h-screen">
+          <h2 className="text-4xl text-center mb-3 font-semibold">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-sm text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros <br />
+            elementum tristique.
+          </p>
+          <Accordion />
         </section>
       </main>
       <Footer />
