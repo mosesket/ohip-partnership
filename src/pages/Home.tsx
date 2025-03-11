@@ -113,12 +113,12 @@ function Home() {
             doloribus ipsa aliquid similique corrupti suscipit tempora
             perferendis ut consequuntur. Id blanditiis ut cupiditate quos?
           </p>
-          <Link
-            to="/become-a-partner"
+            <a
+              href="https://partner.myketnology.com/"
             className="bg-red-600 mt-10 block mx-auto w-52 text-center text-lg text-white px-4 py-3 rounded-sm hover:bg-red-700"
           >
             Become a Partner
-          </Link>
+          </a>
         </div>
       </section>
       <section className="min-h-screen flex justify-center gap-16 items-center max-[860px]:flex-col-reverse">
