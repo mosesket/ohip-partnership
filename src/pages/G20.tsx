@@ -1,7 +1,7 @@
 "use client";
 import Footer from "../components/Footer/Footer";
 import g20 from "../assets/images/g20.jpg";
-import g20Icon1 from "../assets/Icons/Vector.png";
+import fyh1 from "../assets/images/1.png";
 import { Link } from "react-router-dom";
 import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
 import HowToPartner, { CarouselItem } from "../components/Cards/HowToPartner";
@@ -376,6 +376,19 @@ function G20() {
           </div>
           <button className="bg-black text-white py-2 px-10 rounded-md mx-auto mt-10 block">
             Join Now
+          </button>
+        </section>
+        <section
+          className="relative h-[35vh] mt-20 flex items-center justify-center"
+          style={{
+            backgroundImage: `url(${fyh1})`,
+            backgroundSize: "cover",
+            backgroundPosition: "top",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <button className="bg-red-600 text-white px-6 py-3 rounded-sm hover:bg-red-700">
+            Find Your House
           </button>
         </section>
         <section className="py-20 min-h-screen">

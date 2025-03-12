@@ -1,7 +1,6 @@
 "use client";
 import Footer from "../components/Footer/Footer";
 import g20 from "../assets/images/g20.jpg";
-import g20Icon1 from "../assets/Icons/Vector.png";
 import { Link } from "react-router-dom";
 import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
 import HowToPartner, { CarouselItem } from "../components/Cards/HowToPartner";
