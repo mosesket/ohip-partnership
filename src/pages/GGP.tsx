@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import howToPartnerImg1 from "../assets/images/how-to-partner.png";
 import Accordion from "../components/Accordion";
 
-function G20() {
+function GGP() {
   const DEFAULT_ITEMS: CarouselItem[] = [
     {
       title: "Medium length section heading goes here",
@@ -100,49 +100,6 @@ function G20() {
               </Link>
             </div>
           </div>
-        </section>
-        <section className="p-5  mt-10">
-          <h2 className="text-3xl font-semibold text-center">About G20</h2>
-          <p className="text-justify max-w-6xl  mx-auto mt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            quisquam obcaecati eum laudantium fugiat molestias quos modi
-            expedita accusamus delectus, eius debitis possimus dolores ea enim
-            quam porro sapiente pariatur unde libero quibusdam distinctio.
-            Provident nobis eum commodi porro illum est amet officiis rem illo?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-            excepturi. Quidem recusandae voluptatibus alias provident aspernatur
-            distinctio officia officiis, veritatis ducimus cum aliquam
-            consequatur laboriosam cupiditate architecto nesciunt corrupti,
-            assumenda inventore neque quis hic nemo eaque aperiam minus! Unde,
-            possimus officia dicta iure minima numquam necessitatibus porro quis
-            perferendis, quaerat provident facilis in tempore vero omnis.
-            Voluptate, rerum qui. Rem deleniti, consectetur exercitationem
-            repellat veniam ea minima similique magnam provident, sequi deserunt
-            ab corporis molestiae recusandae nulla iusto odio excepturi. Alias
-            deserunt autem itaque consequatur quo deleniti ea modi cumque,
-            perferendis voluptas molestias voluptatem vero culpa tempore,
-            possimus officiis aut.
-          </p>
-          <p className="text-justify max-w-6xl  mx-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            quisquam obcaecati eum laudantium fugiat molestias quos modi
-            expedita accusamus delectus, eius debitis possimus dolores ea enim
-            quam porro sapiente pariatur unde libero quibusdam distinctio.
-            Provident nobis eum commodi porro illum est amet officiis rem illo?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-            excepturi. Quidem recusandae voluptatibus alias provident aspernatur
-            distinctio officia officiis, veritatis ducimus cum aliquam
-            consequatur laboriosam cupiditate architecto nesciunt corrupti,
-            assumenda inventore neque quis hic nemo eaque aperiam minus! Unde,
-            possimus officia dicta iure minima numquam necessitatibus porro quis
-            perferendis, quaerat provident facilis in tempore vero omnis.
-            Voluptate, rerum qui. Rem deleniti, consectetur exercitationem
-            repellat veniam ea minima similique magnam provident, sequi deserunt
-            ab corporis molestiae recusandae nulla iusto odio excepturi. Alias
-            deserunt autem itaque consequatur quo deleniti ea modi cumque,
-            perferendis voluptas molestias voluptatem vero culpa tempore,
-            possimus officiis aut.
-          </p>
         </section>
         <section className="flex min-h-[80vh] max-[853px]:flex-col max-[853px]:py-20 justify-center items-center max-w-5xl gap-16 mx-auto">
           <VideoPlaceholder />
@@ -395,4 +352,4 @@ function G20() {
   );
 }
 
-export default G20;
+export default GGP;

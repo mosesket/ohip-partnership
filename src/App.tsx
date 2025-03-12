@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Resources from "./pages/Programmes";
 import G20 from "./pages/G20";
+import GGP from "./pages/GGP";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/partnership/g20" element={<G20 />} />
-        {/*  <Route path="/become-a-partner" element={<BecomePartner />} /> */}
+        <Route path="/partnership/ggp" element={<GGP />} />
+        {/* <Route path="/become-a-partner" element={<BecomePartner />} /> */}
       </Routes>
     </Router>
   );
