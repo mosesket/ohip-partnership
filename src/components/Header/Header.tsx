@@ -61,19 +61,6 @@ function Header() {
                   How to Join
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/partnership-tiers"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Partnership Tiers
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="block px-4 py-2 hover:bg-gray-200">
-                  FAQ
-                </Link>
-              </li>
             </ul>
           </li>
           <li>
@@ -84,6 +71,11 @@ function Header() {
           <li>
             <Link to="/about" className="text-gray-700 hover:text-red-600">
               About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-gray-700 hover:text-red-600">
+              Contact
             </Link>
           </li>
           <li>
@@ -174,22 +166,6 @@ function Header() {
                         className="block px-4 py-2 hover:bg-gray-200"
                       >
                         How to Join
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/partnership-tiers"
-                        className="block px-4 py-2 hover:bg-gray-200"
-                      >
-                        Partnership Tiers
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/faq"
-                        className="block px-4 py-2 hover:bg-gray-200"
-                      >
-                        FAQ
                       </Link>
                     </li>
                   </>

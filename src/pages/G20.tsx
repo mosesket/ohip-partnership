@@ -1,5 +1,4 @@
 "use client";
-import Footer from "../components/Footer/Footer";
 import g20 from "../assets/images/g20.jpg";
 import fyh1 from "../assets/images/1.png";
 import { Link } from "react-router-dom";
@@ -403,7 +402,6 @@ function G20() {
           <Accordion />
         </section>
       </main>
-      <Footer />
     </>
   );
 }

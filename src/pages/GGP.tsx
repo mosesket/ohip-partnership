@@ -1,5 +1,4 @@
 "use client";
-import Footer from "../components/Footer/Footer";
 import g20 from "../assets/images/g20.jpg";
 import { Link } from "react-router-dom";
 import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
@@ -346,7 +345,6 @@ function GGP() {
           <Accordion />
         </section>
       </main>
-      <Footer />
     </>
   );
 }

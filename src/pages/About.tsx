@@ -4,13 +4,10 @@ import ohipImg5 from "../assets/images/ohip-img-5.png";
 import ohipImg6 from "../assets/images/ohip-img-6.png";
 import ohipImg7 from "../assets/images/ohip-img-7.png";
 import ohipImg8 from "../assets/images/ohip-img-8.png";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
 
 function About() {
   return (
     <>
-      <Header />
       <section
         className="relative min-h-screen flex items-center justify-center"
         style={{
@@ -81,7 +78,6 @@ function About() {
         <img src={ohipImg7} alt="" className="w-[300px]" />
         <img src={ohipImg8} alt="" className="w-[300px]" />
       </section>
-      <Footer />
     </>
   );
 }

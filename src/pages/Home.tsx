@@ -9,7 +9,6 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { GiWorld } from "react-icons/gi";
 import { TbChartPie2 } from "react-icons/tb";
 import { IoIosPeople } from "react-icons/io";
-import Footer from "../components/Footer/Footer";
 import Carousel from "../components/Animation/Carousel/Carousel";
 import {
   FiCircle,
@@ -113,8 +112,8 @@ function Home() {
             doloribus ipsa aliquid similique corrupti suscipit tempora
             perferendis ut consequuntur. Id blanditiis ut cupiditate quos?
           </p>
-            <a
-              href="https://partner.myketnology.com/"
+          <a
+            href="https://partner.myketnology.com/"
             className="bg-red-600 mt-10 block mx-auto w-52 text-center text-lg text-white px-4 py-3 rounded-sm hover:bg-red-700"
           >
             Become a Partner
@@ -218,7 +217,6 @@ function Home() {
           content={<Testimonial DEFAULT_ITEMS={DEFAULT_ITEMS} />}
         />
       </section>
-      <Footer />
     </>
   );
 }
