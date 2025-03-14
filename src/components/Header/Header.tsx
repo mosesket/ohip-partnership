@@ -121,6 +121,11 @@ function Header() {
             <li className="py-2" onClick={toggleMenu}>
               <Link to="/about">About</Link>
             </li>
+            <li className="py-2" onClick={toggleMenu}>
+              <Link to="/contact" className="text-gray-700 hover:text-red-600">
+                Contact
+              </Link>
+            </li>
             <li className="relative group">
               <button
                 className="text-gray-700 hover:text-red-600 flex gap-2 items-center group"
