@@ -76,13 +76,11 @@ function G20() {
           <div className="absolute bg-blue-900/30 inset-0"></div>
           <div className="z-10 max-w-4xl">
             <h2 className="text-white text-6xl max-[820px]:text-4xl font-semibold text-center mb-4">
-              Medium length hero heading goes here
+              Become a Partner in Spreading the Gospel
             </h2>
             <p className="text-white max-w-2xl mx-auto max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat.
+              Your partnership helps spread the Gospel, support ministries, and
+              transform lives worldwide. Be a part of this mission.
             </p>
             <div className="flex text-center mt-10 gap-3 justify-center">
               <Link

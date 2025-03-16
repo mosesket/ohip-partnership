@@ -28,15 +28,15 @@ function Header() {
               <MdKeyboardArrowDown className="group-hover:rotate-180" />
             </button>
             {/* Dropdown Menu */}
-            <ul className="absolute left-0 w-max bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-200">
-              <li>
+            <ul className="absolute left-0 w-[10rem] overflow-hidden bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-200">
+              {/* <li>
                 <Link
                   to="/why-become-a-partner"
                   className="block px-4 py-2 hover:bg-gray-200"
                 >
                   Why Become a Partner
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/partnership/g20"
@@ -53,14 +53,14 @@ function Header() {
                   GPP
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/how-to-join"
                   className="block px-4 py-2 hover:bg-gray-200"
                 >
                   How to Join
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
           <li>
@@ -136,19 +136,19 @@ function Header() {
               </button>
               {/* Dropdown Menu */}
               <ul
-                className={`w-max rounded-lg group-hover:opacity-100 transition-opacity duration-200`}
+                className={`w-[10rem] rounded-lg group-hover:opacity-100 transition-opacity duration-200`}
                 onClick={toggleMenu}
               >
                 {hiddenMenu && (
                   <>
-                    <li>
+                    {/* <li>
                       <Link
                         to="/why-become-a-partner"
                         className="block px-4 py-2 hover:bg-gray-200"
                       >
                         Why Become a Partner
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         to="/partnership/g20"
@@ -165,14 +165,14 @@ function Header() {
                         GPP
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link
                         to="/how-to-join"
                         className="block px-4 py-2 hover:bg-gray-200"
                       >
                         How to Join
                       </Link>
-                    </li>
+                    </li> */}
                   </>
                 )}
               </ul>

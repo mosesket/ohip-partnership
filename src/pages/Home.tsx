@@ -1,14 +1,14 @@
 "use client";
 import { JSX, useEffect, useState } from "react";
 import ohipImg1 from "../assets/images/ohip-img-1.jpg";
-import ohipImg2 from "../assets/images/ohip-img-2.png";
-import ohipImg3 from "../assets/images/ohip-img-3.png";
-import ohipImg4 from "../assets/images/ohip-img-4.png";
-import { Link } from "react-router-dom";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
-import { GiWorld } from "react-icons/gi";
-import { TbChartPie2 } from "react-icons/tb";
-import { IoIosPeople } from "react-icons/io";
+// import ohipImg2 from "../assets/images/ohip-img-2.png";
+// import ohipImg3 from "../assets/images/ohip-img-3.png";
+// import ohipImg4 from "../assets/images/ohip-img-4.png";
+// import { Link } from "react-router-dom";
+// import { VscWorkspaceTrusted } from "react-icons/vsc";
+// import { GiWorld } from "react-icons/gi";
+// import { TbChartPie2 } from "react-icons/tb";
+// import { IoIosPeople } from "react-icons/io";
 import Carousel from "../components/Animation/Carousel/Carousel";
 import {
   FiCircle,
@@ -93,7 +93,7 @@ function Home() {
   return (
     <>
       <section
-        className="relative min-h-screen flex items-center justify-center"
+        className="relative min-h-screen max-[941px]:min-h-[80vh] flex items-center justify-center pt-32"
         style={{
           backgroundImage: `url(${ohipImg1})`,
           backgroundSize: "cover",
@@ -103,24 +103,27 @@ function Home() {
       >
         <div className="absolute bg-blue-900/30 inset-0"></div>
         <div className="z-10">
-          <h2 className="text-white uppercase text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
-            OHIP Partnership
+          <h2 className="text-white capitalize text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
+            Welcome to Partnership
           </h2>
-          <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            quisquam corporis exercitationem repudiandae. Maiores facilis
-            doloribus ipsa aliquid similique corrupti suscipit tempora
-            perferendis ut consequuntur. Id blanditiis ut cupiditate quos?
+          <p className="text-white max-w-3xl max-[820px]:max-w-xl text-xl text-center max-[490px]:px-8">
+            It's all about jesus
           </p>
-          <a
+          <iframe
+            src="https://www.youtube.com/embed/zn9-73sWaiA?si=rt0Yb9bHYVetEWw2"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            className="mx-auto mt-10 w-[50rem] h-[30rem] max-[820px]:w-full max-[820px]:h-96"
+          ></iframe>
+          {/* <a
             href="https://partner.myketnology.com/"
             className="bg-red-600 mt-10 block mx-auto w-52 text-center text-lg text-white px-4 py-3 rounded-sm hover:bg-red-700"
-          >
+            >
             Become a Partner
-          </a>
+            </a> */}
         </div>
       </section>
-      <section className="min-h-screen flex justify-center gap-16 items-center max-[860px]:flex-col-reverse">
+      {/* <section className="min-h-screen flex justify-center gap-16 items-center max-[860px]:flex-col-reverse">
         <img
           src={ohipImg2}
           alt="Packaging food stuff to give"
@@ -143,8 +146,8 @@ function Home() {
             Read More
           </Link>
         </div>
-      </section>
-      <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20 max-[860px]:pb-28 max-[860px]:mt-10 max-[860px]:flex-wrap">
+      </section> */}
+      {/* <section className="min-h-[70vh] flex justify-center items-center gap-10 px-20 max-[860px]:pb-28 max-[860px]:mt-10 max-[860px]:flex-wrap">
         <div className="text-center">
           <VscWorkspaceTrusted className="text-6xl mx-auto mb-2 text-red-500" />
           <p className="text-sm">
@@ -182,8 +185,8 @@ function Home() {
             Number Of Lives Touched
           </h2>
         </div>
-      </section>
-      <section className="relative min-h-[30vh] text-white text-center flex justify-center items-center gap-10 p-20 max-[490px]:px-8 bg-red-600">
+      </section> */}
+      {/* <section className="relative min-h-[30vh] text-white text-center flex justify-center items-center gap-10 p-20 max-[490px]:px-8 bg-red-600">
         <img
           src={ohipImg3}
           alt="Prophet Isaiah Mac Wealth"
@@ -197,13 +200,21 @@ function Home() {
           at modi eaque itaque veniam aspernatur nesciunt unde temporibus dolore
           option.
         </p>
-      </section>
-      <section className="py-20 flex justify-center items-center gap-10 px-20">
+      </section> */}
+      {/* <section className="py-20 flex justify-center items-center gap-10 px-20">
         <img
           src={ohipImg4}
           alt="become a partner flyer"
           className="max-w-4xl max-[860px]:w-full"
         />
+      </section> */}
+      <section className="min-h-[30vh] flex justify-center items-center gap-10 max-[860px]:flex-wrap max-[860px]:gap-4">
+        <button className="text-lg bg-red-600 px-16 rounded-md py-3 text-white">
+          Join GGp
+        </button>
+        <button className="text-lg bg-red-600 px-16 rounded-md py-3 text-white">
+          Join G20
+        </button>
       </section>
       <section>
         <h2 className="text-2xl font-semibold text-center mb-10">
