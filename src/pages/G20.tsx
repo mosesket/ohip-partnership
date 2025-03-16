@@ -2,7 +2,7 @@
 import g20 from "../assets/images/g20.jpg";
 import fyh1 from "../assets/images/1.png";
 import { Link } from "react-router-dom";
-import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
+import videoSrc from "../assets/images/video.png";
 import HowToPartner, { CarouselItem } from "../components/Cards/HowToPartner";
 import { FaCheck } from "react-icons/fa6";
 import Carousel from "../components/Animation/Carousel/Carousel";
@@ -142,7 +142,9 @@ function G20() {
           </p>
         </section>
         <section className="flex min-h-[80vh] max-[853px]:flex-col max-[853px]:py-20 justify-center items-center max-w-5xl gap-16 mx-auto">
-          <VideoPlaceholder />
+          <div className="w-full rounded-2xl h-[30rem] flex justify-center items-center">
+            <img src={videoSrc} alt="" />
+          </div>
           <div className="w-full max-w-md max-[853px]:max-w-full max-[853px]:px-8">
             <h2 className="text-3xl font-semibold mb-3">
               Benefits of Partnership
