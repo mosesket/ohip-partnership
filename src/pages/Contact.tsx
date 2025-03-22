@@ -53,7 +53,7 @@ function Contact() {
             </div>
             <div className="flex gap-10 my-16 items-center">
               <MdOutlineMailOutline className="text-3xl" />
-              <p className="ml-14">info@onesoundrevival.tv</p>
+              <p className="">info@onesoundrevival.tv</p>
             </div>
           </div>
           <div className="flex gap-10 items-center">

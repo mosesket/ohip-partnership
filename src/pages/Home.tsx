@@ -214,13 +214,13 @@ function Home() {
       </section> */}
       <section className="min-h-[30vh] flex justify-center items-center gap-10 max-[860px]:flex-wrap max-[860px]:gap-4">
         <Link
-          to={"/register"}
+          to="/register?partner=ggp"
           className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
         >
           Join GGp
         </Link>
         <Link
-          to={"register"}
+          to="/register?partner=g20"
           className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
         >
           Join G20
