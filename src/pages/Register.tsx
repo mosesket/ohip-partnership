@@ -1,55 +1,303 @@
+import { ChangeEvent, useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import registerImage from "../assets/images/register.png";
+import { useLocation } from "react-router-dom";
 
 function Register() {
+  const location = useLocation();
+  const [partnerType, setPartnerType] = useState("ggp_partner");
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const partnerParam = searchParams.get("partner");
+
+    if (partnerParam === "g20") {
+      setPartnerType("g20_partner");
+    } else if (partnerParam === "ggp") {
+      setPartnerType("ggp_partner");
+    }
+  }, [location]);
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors }
+  } = useForm({
+    defaultValues: {
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone: "",
+      dob: "",
+      gender: "",
+      country: "",
+      state: "",
+      amount: "",
+      currency_code: "USD",
+      employment: "",
+      date_of_remission: "",
+      partner_type: "ggp_partner"
+    }
+  });
+
+  useEffect(() => {
+    setValue("partner_type", partnerType);
+  }, [partnerType, setValue]);
+
+  interface FormData {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+    dob: string;
+    gender: string;
+    country: string;
+    state: string;
+    amount: string;
+    currency_code: string;
+    employment?: string;
+    date_of_remission?: string;
+    partner_type: string;
+  }
+
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data);
+    
+  };
+
   return (
     <main className="min-h-screen flex justify-center items-center">
       <div className="flex justify-center items-center mx-auto gap-8 my-20 max-w-4xl">
-        <img src={registerImage} className="h-[40rem]" alt="" />
-        <form className="">
+        <img src={registerImage} className="h-[40rem]" alt="Registration" />
+
+        <form className="w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
           <h2 className="text-3xl font-bold">Sign Up</h2>
-          <p className="mb-4">Lorem ipsum dolor sit amet adipiscing elit.</p>
-          <label htmlFor="name" className="font-semibold">
-            Name
-          </label>
+          <p className="mb-6">Please fill in your details to register.</p>
+
           <input
-            type="text"
-            className="py-2 px-4 w-full mt-2 mb-4 border rounded-md border-gray-300"
+            type="hidden"
+            id="partner_type"
+            {...register("partner_type", { required: "Partner type is required" })}
           />
-          <label htmlFor="name" className="font-semibold">
-            Email
-          </label>
-          <input
-            type="text"
-            className="py-2 px-4 w-full mt-2 mb-4 border rounded-md border-gray-300"
-          />
-          <label htmlFor="name" className="font-semibold">
-            DOB
-          </label>
-          <input
-            type="text"
-            className="py-2 px-4 w-full mb-4 mt-2 border rounded-md border-gray-300"
-          />
-          <label htmlFor="name" className="font-semibold">
-            Name
-          </label>
-          <select
-            name="division"
-            id="division"
-            className="p-2 w-full mt-2 mb-4 border rounded-md border-gray-300"
+          
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label htmlFor="first_name" className="font-semibold block mb-2">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="first_name"
+                className="py-2 px-4 w-full border rounded-md border-gray-300"
+                {...register("first_name", { required: "First name is required" })}
+              />
+              {errors.first_name && (
+                <p className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="last_name" className="font-semibold block mb-2">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="last_name"
+                className="py-2 px-4 w-full border rounded-md border-gray-300"
+                {...register("last_name", { required: "Last name is required" })}
+              />
+              {errors.last_name && (
+                <p className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="email" className="font-semibold block mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="py-2 px-4 w-full border rounded-md border-gray-300"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address"
+                }
+              })}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="phone" className="font-semibold block mb-2">
+              Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              className="py-2 px-4 w-full border rounded-md border-gray-300"
+              {...register("phone", { required: "Phone number is required" })}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="dob" className="font-semibold block mb-2">
+              Date of Birth
+            </label>
+            <input
+              type="date"
+              id="dob"
+              className="py-2 px-4 w-full border rounded-md border-gray-300"
+              {...register("dob", { required: "Date of birth is required" })}
+            />
+            {errors.dob && (
+              <p className="text-red-500 text-sm mt-1">{errors.dob.message}</p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="gender" className="font-semibold block mb-2">
+              Gender
+            </label>
+            <select
+              id="gender"
+              className="py-2 px-4 w-full border rounded-md border-gray-300"
+              {...register("gender", { required: "Gender is required" })}
+            >
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            {errors.gender && (
+              <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label htmlFor="country" className="font-semibold block mb-2">
+                Country
+              </label>
+              <input
+                type="text"
+                id="country"
+                className="py-2 px-4 w-full border rounded-md border-gray-300"
+                {...register("country", { required: "Country is required" })}
+              />
+              {errors.country && (
+                <p className="text-red-500 text-sm mt-1">{errors.country.message}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="state" className="font-semibold block mb-2">
+                State
+              </label>
+              <input
+                type="text"
+                id="state"
+                className="py-2 px-4 w-full border rounded-md border-gray-300"
+                {...register("state", { required: "State is required" })}
+              />
+              {errors.state && (
+                <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label htmlFor="amount" className="font-semibold block mb-2">
+                Amount
+              </label>
+              <input
+                type="number"
+                id="amount"
+                step="0.01"
+                className="py-2 px-4 w-full border rounded-md border-gray-300"
+                {...register("amount", { required: "Amount is required" })}
+              />
+              {errors.amount && (
+                <p className="text-red-500 text-sm mt-1">{errors.amount.message}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="currency_code" className="font-semibold block mb-2">
+                Currency
+              </label>
+              <select
+                id="currency_code"
+                className="py-2 px-4 w-full border rounded-md border-gray-300"
+                {...register("currency_code", { required: "Currency is required" })}
+              >
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="NGN">NGN</option>
+              </select>
+              {errors.currency_code && (
+                <p className="text-red-500 text-sm mt-1">{errors.currency_code.message}</p>
+              )}
+            </div>
+          </div>
+
+          {partnerType === "g20_partner" && (
+            <>
+              <div className="mb-4">
+                <label htmlFor="employment" className="font-semibold block mb-2">
+                  Employment Status
+                </label>
+                <select
+                  id="employment"
+                  className="py-2 px-4 w-full border rounded-md border-gray-300"
+                  {...register("employment", {
+                    required: partnerType === "g20_partner" ? "Employment status is required" : false
+                  })}
+                >
+                  <option value="">Select Employment Status</option>
+                  <option value="freelance">Freelance</option>
+                  <option value="self_employed">Self Employed</option>
+                  <option value="full_time">Full Time</option>
+                  <option value="part_time">Part Time</option>
+                  <option value="contract">Contract</option>
+                  <option value="retired">Retired</option>
+                </select>
+                {errors.employment && (
+                  <p className="text-red-500 text-sm mt-1">{errors.employment.message}</p>
+                )}
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="date_of_remission" className="font-semibold block mb-2">
+                  Date of Remission
+                </label>
+                <input
+                  type="date"
+                  id="date_of_remission"
+                  className="py-2 px-4 w-full border rounded-md border-gray-300"
+                  {...register("date_of_remission", {
+                    required: partnerType === "g20_partner" ? "Date of remission is required" : false
+                  })}
+                />
+                {errors.date_of_remission && (
+                  <p className="text-red-500 text-sm mt-1">{errors.date_of_remission.message}</p>
+                )}
+              </div>
+            </>
+          )}
+
+          <button
+            type="submit"
+            className="w-full py-3 text-white bg-black rounded-md hover:bg-gray-800 transition"
           >
-            <option value="ikeja-division">Ikeja division</option>
-            <option value="abuja-division">Abuja division</option>
-            <option value="ikoyi-division">Ikoyi division</option>
-            <option value="new-division">New division</option>
-          </select>
-          <label htmlFor="name" className="font-semibold">
-            Create Password
-          </label>
-          <input
-            type="password"
-            className="py-2 px-4 w-full mt-2 border rounded-md border-gray-300"
-          />
-          <button className="w-full py-2 text-white bg-black mt-5">
             Register
           </button>
         </form>
