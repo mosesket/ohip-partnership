@@ -69,13 +69,13 @@ function Register() {
   };
 
   return (
-    <main className="min-h-screen flex justify-center items-center">
-      <div className="flex justify-center items-center mx-auto gap-8 my-20 max-w-4xl">
-        <img src={registerImage} className="h-[40rem]" alt="Registration" />
-
-        <form className="w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
-          <h2 className="text-3xl font-bold">Sign Up</h2>
-          <p className="mb-6">Please fill in your details to register.</p>
+    <main className="min-h-screen flex justify-center items-center p-4 pt-30">
+      <div className="w-full max-w-md">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h2 className="text-3xl font-bold text-center">Sign Up</h2>
+          <p className="mb-6 text-center">
+          {partnerType === "ggp_partner" ? "GGP Partner Registration" : "G20 Partner Registration"}
+          </p>
 
           <input
             type="hidden"
@@ -297,7 +297,7 @@ function Register() {
 
           <button
             type="submit"
-            className="w-full py-3 text-white bg-black rounded-md hover:bg-gray-800 transition"
+            className="w-full py-3 text-white bg-black rounded-md hover:bg-gray-800 transition mb-10"
           >
             Register
           </button>
