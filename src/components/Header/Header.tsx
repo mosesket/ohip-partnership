@@ -14,7 +14,9 @@ function Header() {
   };
   return (
     <header className="bg-white shadow-md p-4 px-8 flex justify-between items-center fixed w-full z-[1000] h-24">
-      <img src={logo} alt="Ohip LOgo" className="w-25 " />
+      <Link to="/">
+        <img src={logo} alt="Ohip Logo" className="w-25" />
+      </Link>
       <nav className="hidden min-[860px]:block">
         <ul className="flex gap-10 text-lg">
           <li>
