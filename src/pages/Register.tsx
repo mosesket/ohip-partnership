@@ -1,7 +1,8 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import registerImage from "../assets/images/register.png";
 import { useLocation } from "react-router-dom";
+import { toast } from "sonner";
 
 function Register() {
   const location = useLocation();
@@ -64,6 +65,7 @@ function Register() {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
     
+    toast.success("Registration successful!");
   };
 
   return (
@@ -175,7 +177,6 @@ function Register() {
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="other">Other</option>
             </select>
             {errors.gender && (
               <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>
