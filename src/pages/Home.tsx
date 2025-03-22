@@ -10,69 +10,72 @@ import ohipImg1 from "../assets/images/ohip-img-1.jpg";
 // import { TbChartPie2 } from "react-icons/tb";
 // import { IoIosPeople } from "react-icons/io";
 import Carousel from "../components/Animation/Carousel/Carousel";
-import {
-  FiCircle,
-  FiCode,
-  FiFileText,
-  FiLayers,
-  FiLayout,
-} from "react-icons/fi";
+import { FiCircle, FiFileText } from "react-icons/fi";
 import Testimonial from "../components/Cards/Testimonial";
 
 export interface CarouselItem {
   title: string;
-  description: string;
+  description: any;
   id: number;
   icon: JSX.Element;
-  profile: string;
+  // profile: string;
 }
 
 function Home() {
   const DEFAULT_ITEMS: CarouselItem[] = [
     {
-      title: "Faith Journey",
-      description:
-        "Attending this church has transformed my life. The community, support, and uplifting messages have brought me closer to God and strengthened my faith. I've discovered a renewed sense of purpose and hope, knowing I'm not walking this journey alone. The sermons speak directly to my heart, offering wisdom and guidance for both my spiritual and personal life. This church has truly become my spiritual home, where I continue to grow and find peace every day.",
+      title: "DIVINE REVERSAL IN MY BUSINESS!",
+      description: (
+        <>
+          Last year ended with a breakthrough—I paid my G20 vow, rent, and major
+          expenses in one month as my finances shifted. But in March, everything
+          dried up. Despite the struggle, I stayed committed to my tithes and
+          vows, giving all I had.
+          <br />
+          <br />
+          At Night of Divine Reversal, I cried to God. That Sunday, Apostle
+          Peter sent me a prophetic seed—my last money! Two days later, my
+          financial doors BURST open—bulk jobs and money flowed in effortlessly!
+          What took months to struggle for is now coming with ease!
+          <br />
+          <br />
+          As I type, ANOTHER BULK ORDER JUST CAME IN! I have truly seen the
+          mercy of God!
+          <h2 className="text-2xl font-semibold mt-8">Esamah Deba</h2>
+          <p>GPC Lekki, Lagos</p>
+        </>
+      ),
       id: 1,
       icon: <FiFileText className="carousel-icon" />,
-      profile:
-        "https://cdn.pixabay.com/photo/2018/01/22/07/31/portrait-3098319_1280.jpg",
     },
     {
-      title: "Spiritual Growth",
-      description:
-        "I found peace, purpose, and a deeper connection with God through the worship and teachings here. This church truly feels like home. The sermons challenge me to grow spiritually, and the small groups have helped me build lasting relationships. I've discovered the power of prayer and how it can bring clarity to the most challenging situations. The fellowship here is unmatched, and it continually inspires me to seek God's presence in every aspect of my life.",
+      title: "MY FEJ PACKAGE CAME EARLY!",
+      description: (
+        <>
+          I struggled with low-paying jobs for years. In 2021, Prophet declared
+          that sowing into the Ark would break financial limits. I believed,
+          sowed hundreds of thousands, and remitted my vow—even when I didn’t
+          know how.
+          <br />
+          <br />
+          Soon after, the Holy Spirit led me into tech, miraculously providing
+          for my training. He also instructed me to take my House of Prayer and
+          GGP seriously, and as I obeyed, my finances began to shift.
+          <br />
+          <br />
+          Days before Friday Evening With Jesus, I applied for a job and prayed
+          over my oblations. Just hours after FEJ, I got an offer—5x my salary!
+          On my resumption day, another company offered more, and side gigs keep
+          flowing in!
+          <p className="my-5">
+            The covenant works, and I am living proof! Glory to God!
+          </p>
+          <h2 className="text-2xl font-semibold mt-8">Kenny Ogbogu</h2>
+          <p>GPC Yaba, Lagos</p>
+        </>
+      ),
       id: 2,
       icon: <FiCircle className="carousel-icon" />,
-      profile:
-        "https://cdn.pixabay.com/photo/2016/11/20/18/18/girl-1843477_1280.jpg",
-    },
-    {
-      title: "Community Support",
-      description:
-        "From the moment I walked in, I was welcomed with open arms. The love and support I've received from this church family have been incredible. Whether it's through prayer, counseling, or just friendly conversations, I always feel uplifted and encouraged. This church doesn't just talk about love—it lives it. Whether you're going through a tough time or celebrating a joyful moment, there's always someone here to share it with, reminding me of God's constant presence and care.",
-      id: 3,
-      icon: <FiLayers className="carousel-icon" />,
-      profile:
-        "https://cdn.pixabay.com/photo/2017/05/31/06/49/model-2359322_1280.jpg",
-    },
-    {
-      title: "Life-Changing Experience",
-      description:
-        "The sermons, fellowship, and outreach programs have inspired me to live a more meaningful and Christ-centered life. The church's dedication to serving others and spreading love has shown me the importance of compassion and faith in everyday living. It’s more than just attending services—it's about being part of a movement that brings positive change to both individuals and the community. This church has equipped me with the tools to navigate life's challenges while staying rooted in faith.",
-      id: 4,
-      icon: <FiLayout className="carousel-icon" />,
-      profile:
-        "https://cdn.pixabay.com/photo/2019/12/16/14/46/black-man-4699506_1280.jpg",
-    },
-    {
-      title: "Heartfelt Gratitude",
-      description:
-        "I’m so grateful for this church. It’s not just a place of worship, but a source of encouragement, hope, and friendship. The sense of belonging I've found here has brought immense joy and peace to my life, reminding me of God's endless love. The kindness and generosity of the congregation continually inspire me to extend that same love to others. Every service, every event, and every encounter leaves me feeling uplifted and ready to face the world with renewed strength and faith.",
-      id: 5,
-      icon: <FiCode className="carousel-icon" />,
-      profile:
-        "https://cdn.pixabay.com/photo/2015/12/20/20/31/m-john-d-1101635_1280.jpg",
     },
   ];
   const [index, setIndex] = useState(0);
@@ -80,9 +83,9 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 9000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
