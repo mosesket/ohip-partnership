@@ -3,10 +3,10 @@ function Footer() {
     <footer className="bg-black text-white p-10 px-20 max-[490px]:p-8">
       <div className="flex justify-between flex-wrap gap-10">
         <div className="">
-          <div className="">
+          {/* <div className="">
             <h2 className="text-2xl font-semibold mb-2">Contact</h2>
             <p>becomepartner@gmail.com</p>
-          </div>
+          </div> */}
           <div className="">
             <h2 className="text-2xl font-semibold mb-2 mt-3">Address</h2>
             <p>

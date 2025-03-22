@@ -12,6 +12,7 @@ import ohipImg1 from "../assets/images/ohip-img-1.jpg";
 import Carousel from "../components/Animation/Carousel/Carousel";
 import { FiCircle, FiFileText } from "react-icons/fi";
 import Testimonial from "../components/Cards/Testimonial";
+import { Link } from "react-router-dom";
 
 export interface CarouselItem {
   title: string;
@@ -212,12 +213,18 @@ function Home() {
         />
       </section> */}
       <section className="min-h-[30vh] flex justify-center items-center gap-10 max-[860px]:flex-wrap max-[860px]:gap-4">
-        <button className="text-lg bg-red-600 px-16 rounded-md py-3 text-white">
+        <Link
+          to={"/register"}
+          className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
+        >
           Join GGp
-        </button>
-        <button className="text-lg bg-red-600 px-16 rounded-md py-3 text-white">
+        </Link>
+        <Link
+          to={"register"}
+          className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
+        >
           Join G20
-        </button>
+        </Link>
       </section>
       <section>
         <h2 className="text-2xl font-semibold text-center mb-10">

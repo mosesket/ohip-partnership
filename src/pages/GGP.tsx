@@ -82,21 +82,15 @@ function GGP() {
             <h2 className="text-white text-6xl max-[820px]:text-4xl font-semibold text-center mb-4">
               WELCOME TO GLOBAL GOSPEL PARTNERSHIP (GGP)
             </h2>
-            <p className="text-white max-w-2xl mx-auto max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
+            <p className="text-white max-w-2xl mx-auto max-[820px]:max-w-xl text-[20px] text-center max-[490px]:px-8">
               Formerly known as Onesound Higher Impact Partnership (OHIP).
             </p>
             <div className="flex text-center mt-10 gap-3 justify-center">
               <Link
-                to="/become-a-partner"
-                className="bg-white w-40 border-white border text-center text-lg text-gray-900 px-4 py-2 rounded-sm hover:bg-red-700"
+                to="/register"
+                className="bg-red-700 text-center text-lg text-white px-8 py-2 rounded-sm"
               >
-                Button
-              </Link>
-              <Link
-                to="/become-a-partner"
-                className="border-white border w-40 text-center text-lg text-white px-4 py-2 rounded-sm hover:bg-red-700"
-              >
-                Button
+                Become a Partner
               </Link>
             </div>
           </div>
