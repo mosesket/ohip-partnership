@@ -5,6 +5,7 @@ import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
 import noto_bank from "../assets/Icons/noto_bank.png";
 import location from "../assets/Icons/location.png";
 import phone from "../assets/Icons/phone.png";
+import warning from "../assets/Icons/ion_warning.png";
 import world from "../assets/Icons/world.png";
 import { FaAward } from "react-icons/fa";
 // import { CarouselItem } from "../components/Cards/HowToPartner";
@@ -82,6 +83,10 @@ function GGP() {
             <h2 className="text-white text-6xl max-[820px]:text-4xl font-semibold text-center mb-4">
               WELCOME TO GLOBAL GOSPEL PARTNERSHIP (GGP)
             </h2>
+            <p className="text-white max-w-4xl mx-auto max-[820px]:max-w-xl text-[20px] text-center max-[490px]:px-8">
+              A monthly media partnership that gives you the opportunity to give
+              towards ministry expansion via the airwaves
+            </p>
             <p className="text-white max-w-2xl mx-auto max-[820px]:max-w-xl text-[20px] text-center max-[490px]:px-8">
               Formerly known as Onesound Higher Impact Partnership (OHIP).
             </p>
@@ -473,6 +478,17 @@ function GGP() {
               </p>
             </div>
           </div>
+        </section>
+        <section className="flex justify-center items-center flex-col gap-10 py-20">
+          <img src={warning} alt="" />
+          <h2 className="text-2xl font-bold">Be Security Conscious</h2>
+          <p className="max-w-4xl text-center">
+            If you receive a message that looks suspicious, even if the source
+            has the same name as this community, check to ensure that this page
+            has not been duplicated, especially if you are being asked to
+            provide personal or payment details.
+          </p>
+          <h3 className="text-2xl font-bold">Beware!</h3>
         </section>
         <section className="py-20 min-h-screen">
           <h2 className="text-4xl text-center mb-3 font-semibold">
