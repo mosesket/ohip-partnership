@@ -7,6 +7,7 @@ import { toast } from "sonner";
 function Register() {
   const location = useLocation();
   const [partnerType, setPartnerType] = useState("ggp_partner");
+  const [isLoadingCurrencies, setIsLoadingCurrencies] = useState(true);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -59,11 +60,17 @@ function Register() {
 
   useEffect(() => {
     const fetchCurrency = async () => {
-      const response = await axios.get(
-        "https://api.macwealth.org/api/currencies"
-      );
-
-      setCurrencies(response.data.data);
+      setIsLoadingCurrencies(true);
+      try {
+        const response = await axios.get(
+          "https://api.macwealth.org/api/currencies"
+        );
+        setCurrencies(response.data.data);
+      } catch (error) {
+        console.error("Error fetching currencies:", error);
+      } finally {
+        setIsLoadingCurrencies(false);
+      }
     };
 
     fetchCurrency();
@@ -166,7 +173,7 @@ function Register() {
           "Registration successful! Please check your email for login details.",
           { duration: 5000 }
         );
-        
+
         setTimeout(() => {
           toast.info(
             `We've sent your login details to ${data.email}. If you don't see it in your inbox, please check your spam folder.`,
@@ -402,6 +409,7 @@ function Register() {
                 </p>
               )}
             </div>
+
             <div>
               <label
                 htmlFor="currency_code"
@@ -409,19 +417,37 @@ function Register() {
               >
                 Currency
               </label>
-              <select
-                id="currency_code"
-                className="py-2 px-4 w-full border rounded-md border-gray-300"
-                {...register("currency_code", {
-                  required: "Currency is required",
-                })}
-              >
-                {currencies.map((currency: Currency) => (
-                  <option key={currency.id} value={currency.code}>
-                    {currency.code} - {currency.name}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="currency_code"
+                  className={`py-2 px-4 w-full border rounded-md border-gray-300 ${isLoadingCurrencies ? 'bg-gray-100' : ''}`}
+                  {...register("currency_code", {
+                    required: "Currency is required",
+                  })}
+                  disabled={isLoadingCurrencies}
+                >
+                  {isLoadingCurrencies ? (
+                    <option value="">Loading currencies...</option>
+                  ) : (
+                    <>
+                      <option value="">Select Currency</option>
+                      {currencies.map((currency: Currency) => (
+                        <option key={currency.id} value={currency.code}>
+                          {currency.code} - {currency.name}
+                        </option>
+                      ))}
+                    </>
+                  )}
+                </select>
+                {isLoadingCurrencies && (
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    <svg className="animate-spin h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  </div>
+                )}
+              </div>
               {errors.currency_code && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.currency_code.message}
