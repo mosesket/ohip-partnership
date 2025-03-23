@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
@@ -56,15 +57,77 @@ function Register() {
     state: string;
     amount: string;
     currency_code: string;
-    employment?: string;
-    date_of_remission?: string;
+    employment: string;
+    date_of_remission: string;
     partner_type: string;
   }
+  
+  interface BasePayload {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+    dob: string;
+    gender: string;
+    country: string;
+    state: string;
+    amount: string;
+    currency_code: string;
+    partner_type: string;
+  }
+  
+  interface G20Payload extends BasePayload {
+    employment: string;
+    date_of_remission: string;
+  }
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     console.log(data);
-    
-    toast.success("Registration successful!");
+    toast.loading("Processing signup...");
+
+    try {
+      const basePayload: BasePayload = {
+        first_name: data.first_name,
+        last_name: data.last_name,
+        email: data.email,
+        phone: data.phone,
+        dob: data.dob,
+        gender: data.gender,
+        country: data.country,
+        state: data.state,
+        amount: data.amount,
+        currency_code: data.currency_code,
+        partner_type: data.partner_type
+      };
+  
+      let payload: BasePayload | G20Payload = basePayload;
+      
+      if (data.partner_type === "g20_partner") {
+        payload = {
+          ...basePayload,
+          employment: data.employment,
+          date_of_remission: data.date_of_remission
+        };
+      }
+      
+      // const response = await axios.post(`${import.meta.env.VITE_API_URL}/partner/auth/register`, payload);
+      const response = await axios.post(`https://api.macwealth.org/api/partner/auth/register`, payload);
+
+      if (response.data.status === 200) {
+        toast.success("Registration successful!");
+      } else {
+        toast.error(response.data.message || "Registration failed. Please try again.");
+        console.error("Error response:", response.data);
+      }
+    } catch (error) {
+      toast.error("Registration failed. Please try again.");
+      console.error("Error submitting form:", error);
+      
+      if (axios.isAxiosError(error) && error.response) {
+        console.error("Server response:", error.response.data);
+      }
+    }
+
   };
 
   return (
