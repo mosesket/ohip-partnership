@@ -162,7 +162,17 @@ function Register() {
           partner_type: "ggp_partner",
         });
 
-        toast.success("Registration successful!");
+        toast.success(
+          "Registration successful! Please check your email for login details.",
+          { duration: 5000 }
+        );
+        
+        setTimeout(() => {
+          toast.info(
+            `We've sent your login details to ${data.email}. If you don't see it in your inbox, please check your spam folder.`,
+            { duration: 8000 }
+          );
+        }, 2000);
       } else {
         toast.error(
           response.data.message || "Registration failed. Please try again."
@@ -408,7 +418,7 @@ function Register() {
               >
                 {currencies.map((currency: Currency) => (
                   <option key={currency.id} value={currency.code}>
-                    {currency.name}
+                    {currency.code} - {currency.name}
                   </option>
                 ))}
               </select>
