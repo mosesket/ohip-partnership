@@ -74,7 +74,9 @@ function Register() {
     };
 
     fetchCurrency();
-  });
+
+    fetchCurrency();
+  }, []);
 
   interface FormData {
     first_name: string;
