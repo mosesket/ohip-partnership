@@ -48,6 +48,20 @@ function Register() {
     setValue("partner_type", partnerType);
   }, [partnerType, setValue]);
 
+  const [currency, setCurrency] = useState([]);
+
+  useEffect(() => {
+    const fetchCurrency = async () => {
+      const response = await axios.get(
+        "https://api.macwealth.org/api/currencies"
+      );
+
+      setCurrency(response.data.data);
+    };
+
+    fetchCurrency();
+  });
+
   interface FormData {
     first_name: string;
     last_name: string;
@@ -294,13 +308,18 @@ function Register() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="division_chapter" className="font-semibold block mb-2">
+            <label
+              htmlFor="division_chapter"
+              className="font-semibold block mb-2"
+            >
               Division/Chapter
             </label>
             <select
               id="division_chapter"
               className="py-2 px-4 w-full border rounded-md border-gray-300"
-              {...register("division_chapter", { required: "Division/Chapter is required" })}
+              {...register("division_chapter", {
+                required: "Division/Chapter is required",
+              })}
             >
               <option value="">Select Division/Chapter</option>
               <option value="HEADQUARTERS">HEADQUARTERS</option>
@@ -385,10 +404,14 @@ function Register() {
                   required: "Currency is required",
                 })}
               >
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
+                {currency.map((item: any, index) => (
+                  <option key={index} value={item.code}>
+                    {item.code}
+                  </option>
+                ))}
+                {/* <option value="EUR">EUR</option>
                 <option value="GBP">GBP</option>
-                <option value="NGN">NGN</option>
+                <option value="NGN">NGN</option> */}
               </select>
               {errors.currency_code && (
                 <p className="text-red-500 text-sm mt-1">
