@@ -44,11 +44,18 @@ function Register() {
     },
   });
 
+  const [currencies, setCurrencies] = useState<Currency[]>([]);
+
+  interface Currency {
+    id: number;
+    code: string;
+    name: string;
+    symbol: string;
+  }
+
   useEffect(() => {
     setValue("partner_type", partnerType);
   }, [partnerType, setValue]);
-
-  const [currency, setCurrency] = useState([]);
 
   useEffect(() => {
     const fetchCurrency = async () => {
@@ -56,7 +63,7 @@ function Register() {
         "https://api.macwealth.org/api/currencies"
       );
 
-      setCurrency(response.data.data);
+      setCurrencies(response.data.data);
     };
 
     fetchCurrency();
@@ -137,24 +144,24 @@ function Register() {
 
       toast.dismiss(loadingToastId);
 
-      reset({
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone: "",
-        dob: "",
-        gender: "",
-        country: "",
-        state: "",
-        amount: "",
-        currency_code: "USD",
-        employment: "",
-        date_of_remission: "",
-        division_chapter: "",
-        partner_type: "ggp_partner",
-      });
-
       if (response.data.status === 200) {
+        reset({
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone: "",
+          dob: "",
+          gender: "",
+          country: "",
+          state: "",
+          amount: "",
+          currency_code: "USD",
+          employment: "",
+          date_of_remission: "",
+          division_chapter: "",
+          partner_type: "ggp_partner",
+        });
+
         toast.success("Registration successful!");
       } else {
         toast.error(
@@ -308,18 +315,13 @@ function Register() {
           </div>
 
           <div className="mb-4">
-            <label
-              htmlFor="division_chapter"
-              className="font-semibold block mb-2"
-            >
+            <label htmlFor="division_chapter" className="font-semibold block mb-2">
               Division/Chapter
             </label>
             <select
               id="division_chapter"
               className="py-2 px-4 w-full border rounded-md border-gray-300"
-              {...register("division_chapter", {
-                required: "Division/Chapter is required",
-              })}
+              {...register("division_chapter", { required: "Division/Chapter is required" })}
             >
               <option value="">Select Division/Chapter</option>
               <option value="HEADQUARTERS">HEADQUARTERS</option>
@@ -404,9 +406,9 @@ function Register() {
                   required: "Currency is required",
                 })}
               >
-                {currency.map((item: any, index) => (
-                  <option key={index} value={item.code}>
-                    {item.code}
+                {currencies.map((currency: Currency) => (
+                  <option key={currency.id} value={currency.code}>
+                    {currency.code}
                   </option>
                 ))}
                 {/* <option value="EUR">EUR</option>
