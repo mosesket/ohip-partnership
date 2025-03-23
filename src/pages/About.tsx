@@ -37,25 +37,25 @@ function About() {
           </Link> */}
         </div>
       </section>
-      <section className="max-w-6xl mx-auto py-20">
+      <section className="max-w-6xl mx-auto py-20 px-6">
         {/* <h2 className="text-center text-3xl uppercase font-semibold my-10">
           About Partnership
         </h2> */}
-        <p className="text-lg text-pretty max-[860px]:px-8">
+        <p className="text-lg text-pretty">
           Gospel Pillars International is a dynamic, non-denominational church
           movement founded by Dr. Isaiah Macwealth. With over a hundred branches
           spanning four continents, the ministry is dedicated to spreading the
           Gospel of Jesus Christ globally. ​
         </p>
         <h2 className="text-2xl font-semibold my-4">Mission and Vision</h2>
-        <p className="text-lg text-pretty max-[860px]:px-8">
+        <p className="text-lg text-pretty">
           The church's vision is to reveal Jehovah as the Almighty and Yeshua,
           His Son, as the only way to God and salvation. Their purpose is to
           disseminate the knowledge of God's glory worldwide, aiming to restore
           the fear of God and achieve the salvation of this generation. ​
         </p>
         <h2 className="text-2xl font-semibold my-4">Global Presence</h2>
-        <p className="text-lg text-pretty max-[860px]:px-8">
+        <p className="text-lg text-pretty">
           Gospel Pillars Church has established a significant presence in the
           United States, particularly in Dallas, Texas, where it invites
           individuals from diverse backgrounds to discover and experience God's
@@ -63,7 +63,7 @@ function About() {
           all nations with the message of Christ.
         </p>
         <h2 className="text-2xl font-semibold my-4">Leadership</h2>
-        <p className="text-lg text-pretty max-[860px]:px-8">
+        <p className="text-lg text-pretty">
           Dr. Isaiah Macwealth, also known as Isaiah Wealth, is the Senior
           Pastor of Gospel Pillars International Churches worldwide. He is a
           renowned author, philanthropist, and the founder of the OneSound
@@ -75,13 +75,13 @@ function About() {
           various communities with free food, clothing, and emergency supplies.
         </p>
         <h2 className="text-2xl font-semibold my-4">Community Engagement</h2>
-        <p className="text-lg text-pretty max-[860px]:px-8">
+        <p className="text-lg text-pretty">
           The church is actively involved in community outreach, offering
           programs and platforms such as "As and Bs for Jesus" (ABJ) and
           "YouGenius" to engage youths and students. These initiatives aim to
           rehabilitate young people and reform communities worldwide.
         </p>
-        <p className="text-lg text-pretty max-[860px]:px-8">
+        <p className="text-lg text-pretty">
           For more information or to get involved, visit their official website
           at{" "}
           <Link to={"gospelpillars.org"} className="text-blue-500">
