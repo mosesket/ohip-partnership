@@ -408,12 +408,9 @@ function Register() {
               >
                 {currencies.map((currency: Currency) => (
                   <option key={currency.id} value={currency.code}>
-                    {currency.code}
+                    {currency.name}
                   </option>
                 ))}
-                {/* <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="NGN">NGN</option> */}
               </select>
               {errors.currency_code && (
                 <p className="text-red-500 text-sm mt-1">
