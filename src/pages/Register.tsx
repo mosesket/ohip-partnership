@@ -39,6 +39,7 @@ function Register() {
       currency_code: "USD",
       employment: "",
       date_of_remission: "",
+      division_chapter: "",
       partner_type: "ggp_partner",
     },
   });
@@ -60,6 +61,7 @@ function Register() {
     currency_code: string;
     employment: string;
     date_of_remission: string;
+    division_chapter: string;
     partner_type: string;
   }
 
@@ -74,6 +76,7 @@ function Register() {
     state: string;
     amount: string;
     currency_code: string;
+    division_chapter: string;
     partner_type: string;
   }
 
@@ -98,6 +101,7 @@ function Register() {
         state: data.state,
         amount: data.amount,
         currency_code: data.currency_code,
+        division_chapter: data.division_chapter,
         partner_type: data.partner_type,
       };
 
@@ -119,7 +123,6 @@ function Register() {
 
       toast.dismiss(loadingToastId);
 
-      // Clear form data
       reset({
         first_name: "",
         last_name: "",
@@ -133,6 +136,7 @@ function Register() {
         currency_code: "USD",
         employment: "",
         date_of_remission: "",
+        division_chapter: "",
         partner_type: "ggp_partner",
       });
 
@@ -285,6 +289,31 @@ function Register() {
             {errors.gender && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.gender.message}
+              </p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="division_chapter" className="font-semibold block mb-2">
+              Division/Chapter
+            </label>
+            <select
+              id="division_chapter"
+              className="py-2 px-4 w-full border rounded-md border-gray-300"
+              {...register("division_chapter", { required: "Division/Chapter is required" })}
+            >
+              <option value="">Select Division/Chapter</option>
+              <option value="HEADQUARTERS">HEADQUARTERS</option>
+              <option value="NIGERIA">NIGERIA</option>
+              <option value="INTERNATIONAL 1">INTERNATIONAL 1</option>
+              <option value="INTERNATIONAL 2">INTERNATIONAL 2</option>
+              <option value="ASIA">ASIA</option>
+              <option value="AFRICA">AFRICA</option>
+              <option value="EXTERNAL PARTNERS">EXTERNAL PARTNERS</option>
+            </select>
+            {errors.division_chapter && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.division_chapter.message}
               </p>
             )}
           </div>
