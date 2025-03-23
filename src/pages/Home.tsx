@@ -13,6 +13,8 @@ import Carousel from "../components/Animation/Carousel/Carousel";
 import { FiCircle, FiFileText } from "react-icons/fi";
 import Testimonial from "../components/Cards/Testimonial";
 import { Link } from "react-router-dom";
+import G20logo from "../assets/logo/G20_logo.png";
+import GGPlogo from "../assets/logo/GGP_logo.png";
 
 export interface CarouselItem {
   title: string;
@@ -212,19 +214,38 @@ function Home() {
           className="max-w-4xl max-[860px]:w-full"
         />
       </section> */}
-      <section className="min-h-[30vh] flex justify-center items-center gap-10 max-[860px]:flex-wrap max-[860px]:gap-4">
-        <Link
-          to="/register?partner=ggp"
-          className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
-        >
-          Join GGP
-        </Link>
-        <Link
-          to="/register?partner=g20"
-          className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
-        >
-          Join G20
-        </Link>
+      <section className="min-h-[40vh] flex justify-center items-center gap-16 max-[860px]:flex-wrap max-[860px]:gap-8 p-8">
+        <div className="group transition-all duration-300 hover:scale-105">
+          <Link
+            to="/register?partner=ggp"
+            className="flex flex-col items-center justify-center w-64 h-55 bg-gradient-to-br from-red-600 to-red-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
+          >
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-300"></div>
+            <div className="h-20 rounded-fullflex items-center justify-center mb-4">
+              <img src={GGPlogo} alt="G20 Logo" className="w-32 object-contain" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Join GGP</h3>
+            <div className="mt-auto mb-6 px-6 py-2 bg-white/20 rounded-full text-white font-medium hover:bg-white/30 transition-colors">
+              Register Now
+            </div>
+          </Link>
+        </div>
+
+        <div className="group transition-all duration-300 hover:scale-105">
+          <Link
+            to="/register?partner=g20"
+            className="flex flex-col items-center justify-center w-64 h-55 bg-gradient-to-br from-red-700 to-red-900 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
+          >
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-300"></div>
+            <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mb-4">
+              <img src={G20logo} alt="G20 Logo" className="w-16 h-16 object-contain" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Join G20</h3>
+            <div className="mt-auto mb-6 px-6 py-2 bg-white/20 rounded-full text-white font-medium hover:bg-white/30 transition-colors">
+              Register Now
+            </div>
+          </Link>
+        </div>
       </section>
       <section>
         <h2 className="text-2xl font-semibold text-center mb-10">
