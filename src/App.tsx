@@ -9,10 +9,12 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer/Footer";
 import Register from "./pages/Register";
 import { Toaster } from "sonner";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Toaster
         position="top-center"
         expand={true}

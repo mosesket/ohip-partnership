@@ -82,7 +82,8 @@ function Header() {
           </li>
           <li>
             <a
-              href="https://partner.myketnology.com/"
+              href="#"
+              // href="https://partner.myketnology.com/"
               className="bg-red-600 text-white px-4 py-3 rounded-sm hover:bg-red-700"
             >
               Become a Partner
