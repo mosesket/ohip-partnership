@@ -23,7 +23,8 @@ function Register() {
     register,
     handleSubmit,
     setValue,
-    formState: { errors }
+    reset,
+    formState: { errors },
   } = useForm({
     defaultValues: {
       first_name: "",
@@ -38,8 +39,8 @@ function Register() {
       currency_code: "USD",
       employment: "",
       date_of_remission: "",
-      partner_type: "ggp_partner"
-    }
+      partner_type: "ggp_partner",
+    },
   });
 
   useEffect(() => {
@@ -61,7 +62,7 @@ function Register() {
     date_of_remission: string;
     partner_type: string;
   }
-  
+
   interface BasePayload {
     first_name: string;
     last_name: string;
@@ -75,7 +76,7 @@ function Register() {
     currency_code: string;
     partner_type: string;
   }
-  
+
   interface G20Payload extends BasePayload {
     employment: string;
     date_of_remission: string;
@@ -97,41 +98,62 @@ function Register() {
         state: data.state,
         amount: data.amount,
         currency_code: data.currency_code,
-        partner_type: data.partner_type
+        partner_type: data.partner_type,
       };
-  
+
       let payload: BasePayload | G20Payload = basePayload;
-      
+
       if (data.partner_type === "g20_partner") {
         payload = {
           ...basePayload,
           employment: data.employment,
-          date_of_remission: data.date_of_remission
+          date_of_remission: data.date_of_remission,
         };
       }
-      
+
       // const response = await axios.post(`${import.meta.env.VITE_API_URL}/partner/auth/register`, payload);
-      const response = await axios.post(`https://api.macwealth.org/api/partner/auth/register`, payload);
-      
+      const response = await axios.post(
+        `https://api.macwealth.org/api/partner/auth/register`,
+        payload
+      );
+
       toast.dismiss(loadingToastId);
+
+      // Clear form data
+      reset({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
+        dob: "",
+        gender: "",
+        country: "",
+        state: "",
+        amount: "",
+        currency_code: "USD",
+        employment: "",
+        date_of_remission: "",
+        partner_type: "ggp_partner",
+      });
 
       if (response.data.status === 200) {
         toast.success("Registration successful!");
       } else {
-        toast.error(response.data.message || "Registration failed. Please try again.");
+        toast.error(
+          response.data.message || "Registration failed. Please try again."
+        );
         console.error("Error response:", response.data);
       }
     } catch (error) {
       toast.dismiss(loadingToastId);
-      
+
       toast.error("Registration failed. Please try again.");
       console.error("Error submitting form:", error);
-      
+
       if (axios.isAxiosError(error) && error.response) {
         console.error("Server response:", error.response.data);
       }
     }
-
   };
 
   return (
@@ -140,15 +162,19 @@ function Register() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <h2 className="text-3xl font-bold text-center">Sign Up</h2>
           <p className="mb-6 text-center">
-          {partnerType === "ggp_partner" ? "GGP Partner Registration" : "G20 Partner Registration"}
+            {partnerType === "ggp_partner"
+              ? "GGP Partner Registration"
+              : "G20 Partner Registration"}
           </p>
 
           <input
             type="hidden"
             id="partner_type"
-            {...register("partner_type", { required: "Partner type is required" })}
+            {...register("partner_type", {
+              required: "Partner type is required",
+            })}
           />
-          
+
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div>
               <label htmlFor="first_name" className="font-semibold block mb-2">
@@ -158,10 +184,14 @@ function Register() {
                 type="text"
                 id="first_name"
                 className="py-2 px-4 w-full border rounded-md border-gray-300"
-                {...register("first_name", { required: "First name is required" })}
+                {...register("first_name", {
+                  required: "First name is required",
+                })}
               />
               {errors.first_name && (
-                <p className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.first_name.message}
+                </p>
               )}
             </div>
             <div>
@@ -172,10 +202,14 @@ function Register() {
                 type="text"
                 id="last_name"
                 className="py-2 px-4 w-full border rounded-md border-gray-300"
-                {...register("last_name", { required: "Last name is required" })}
+                {...register("last_name", {
+                  required: "Last name is required",
+                })}
               />
               {errors.last_name && (
-                <p className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.last_name.message}
+                </p>
               )}
             </div>
           </div>
@@ -192,12 +226,14 @@ function Register() {
                 required: "Email is required",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address"
-                }
+                  message: "Invalid email address",
+                },
               })}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
             )}
           </div>
 
@@ -212,7 +248,9 @@ function Register() {
               {...register("phone", { required: "Phone number is required" })}
             />
             {errors.phone && (
-              <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message}
+              </p>
             )}
           </div>
 
@@ -245,7 +283,9 @@ function Register() {
               <option value="female">Female</option>
             </select>
             {errors.gender && (
-              <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>
+              <p className="text-red-500 text-sm mt-1">
+                {errors.gender.message}
+              </p>
             )}
           </div>
 
@@ -261,7 +301,9 @@ function Register() {
                 {...register("country", { required: "Country is required" })}
               />
               {errors.country && (
-                <p className="text-red-500 text-sm mt-1">{errors.country.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.country.message}
+                </p>
               )}
             </div>
             <div>
@@ -275,7 +317,9 @@ function Register() {
                 {...register("state", { required: "State is required" })}
               />
               {errors.state && (
-                <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.state.message}
+                </p>
               )}
             </div>
           </div>
@@ -293,17 +337,24 @@ function Register() {
                 {...register("amount", { required: "Amount is required" })}
               />
               {errors.amount && (
-                <p className="text-red-500 text-sm mt-1">{errors.amount.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.amount.message}
+                </p>
               )}
             </div>
             <div>
-              <label htmlFor="currency_code" className="font-semibold block mb-2">
+              <label
+                htmlFor="currency_code"
+                className="font-semibold block mb-2"
+              >
                 Currency
               </label>
               <select
                 id="currency_code"
                 className="py-2 px-4 w-full border rounded-md border-gray-300"
-                {...register("currency_code", { required: "Currency is required" })}
+                {...register("currency_code", {
+                  required: "Currency is required",
+                })}
               >
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
@@ -311,7 +362,9 @@ function Register() {
                 <option value="NGN">NGN</option>
               </select>
               {errors.currency_code && (
-                <p className="text-red-500 text-sm mt-1">{errors.currency_code.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.currency_code.message}
+                </p>
               )}
             </div>
           </div>
@@ -319,14 +372,20 @@ function Register() {
           {partnerType === "g20_partner" && (
             <>
               <div className="mb-4">
-                <label htmlFor="employment" className="font-semibold block mb-2">
+                <label
+                  htmlFor="employment"
+                  className="font-semibold block mb-2"
+                >
                   Employment Status
                 </label>
                 <select
                   id="employment"
                   className="py-2 px-4 w-full border rounded-md border-gray-300"
                   {...register("employment", {
-                    required: partnerType === "g20_partner" ? "Employment status is required" : false
+                    required:
+                      partnerType === "g20_partner"
+                        ? "Employment status is required"
+                        : false,
                   })}
                 >
                   <option value="">Select Employment Status</option>
@@ -338,12 +397,17 @@ function Register() {
                   <option value="retired">Retired</option>
                 </select>
                 {errors.employment && (
-                  <p className="text-red-500 text-sm mt-1">{errors.employment.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.employment.message}
+                  </p>
                 )}
               </div>
 
               <div className="mb-4">
-                <label htmlFor="date_of_remission" className="font-semibold block mb-2">
+                <label
+                  htmlFor="date_of_remission"
+                  className="font-semibold block mb-2"
+                >
                   Date of Remission
                 </label>
                 <input
@@ -351,11 +415,16 @@ function Register() {
                   id="date_of_remission"
                   className="py-2 px-4 w-full border rounded-md border-gray-300"
                   {...register("date_of_remission", {
-                    required: partnerType === "g20_partner" ? "Date of remission is required" : false
+                    required:
+                      partnerType === "g20_partner"
+                        ? "Date of remission is required"
+                        : false,
                   })}
                 />
                 {errors.date_of_remission && (
-                  <p className="text-red-500 text-sm mt-1">{errors.date_of_remission.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.date_of_remission.message}
+                  </p>
                 )}
               </div>
             </>

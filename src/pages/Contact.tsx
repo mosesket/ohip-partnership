@@ -34,6 +34,14 @@ function Contact() {
       body: JSON.stringify(form),
     });
     setLoading(false);
+    setForm({
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      country: "",
+      message: "",
+    });
 
     if (response.ok) {
       toast.success("Message sent successfully!");

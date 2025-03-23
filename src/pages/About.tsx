@@ -10,7 +10,7 @@ function About() {
   return (
     <>
       <section
-        className="relative min-h-[50vh] max-[941px]:min-h-[80vh] flex items-center justify-center"
+        className="relative min-h-[50vh] flex items-center justify-center"
         style={{
           backgroundImage: `url(${ohipImg1})`,
           backgroundSize: "cover",
