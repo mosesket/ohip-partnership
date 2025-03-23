@@ -83,7 +83,7 @@ function Register() {
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     console.log(data);
-    toast.loading("Processing signup...");
+    const loadingToastId = toast.loading("Processing signup...");
 
     try {
       const basePayload: BasePayload = {
@@ -112,6 +112,8 @@ function Register() {
       
       // const response = await axios.post(`${import.meta.env.VITE_API_URL}/partner/auth/register`, payload);
       const response = await axios.post(`https://api.macwealth.org/api/partner/auth/register`, payload);
+      
+      toast.dismiss(loadingToastId);
 
       if (response.data.status === 200) {
         toast.success("Registration successful!");
@@ -120,6 +122,8 @@ function Register() {
         console.error("Error response:", response.data);
       }
     } catch (error) {
+      toast.dismiss(loadingToastId);
+      
       toast.error("Registration failed. Please try again.");
       console.error("Error submitting form:", error);
       
