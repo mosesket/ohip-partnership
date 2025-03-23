@@ -217,7 +217,7 @@ function Home() {
           to="/register?partner=ggp"
           className="text-lg bg-red-600 px-16 rounded-md py-3 text-white"
         >
-          Join GGp
+          Join GGP
         </Link>
         <Link
           to="/register?partner=g20"
