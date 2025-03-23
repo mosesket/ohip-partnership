@@ -2,11 +2,48 @@ import contact from "../assets/images/23.png";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
+import { FormEvent, useState } from "react";
+import { toast } from "sonner";
+import { country_arr } from "../utils/country";
 
 function Contact() {
+  const [form, setForm] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    country: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: any) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    setLoading(true);
+    const response = await fetch("https://api.macwealth.org/api/contact-form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+    setLoading(false);
+
+    if (response.ok) {
+      toast.success("Message sent successfully!");
+    } else {
+      toast.success("An error occurred. Please try again");
+    }
+  };
+
   return (
     <>
-      {" "}
       <section
         className="relative h-[50vh] flex items-center justify-center pt-20"
         style={{
@@ -80,68 +117,85 @@ function Contact() {
             </div>
           </div>
         </div>
-        <form className="border-4 border-gray-200 py-10 px-4 w-[50%] max-[1105px]:w-full">
+        <form
+          onSubmit={handleSubmit}
+          className="border-4 border-gray-200 py-10 px-4 w-[50%] max-[1105px]:w-full"
+        >
           <div className="flex gap-4">
             <div className="w-full">
-              <label htmlFor="firstName" className="block font-medium mb-2">
+              <label htmlFor="firstname" className="block font-medium mb-2">
                 First name
               </label>
               <input
                 type="text"
+                name="firstname"
+                onChange={handleChange}
                 className="px-2 py-2 border w-full rounded-md border-gray-100 font-medium outline-none"
               />
             </div>
             <div className="w-full">
-              <label htmlFor="firstName" className="block font-medium mb-2">
+              <label htmlFor="lastname" className="block font-medium mb-2">
                 Last name
               </label>
               <input
                 type="text"
+                name="lastname"
+                onChange={handleChange}
                 className="px-2 py-2 border w-full rounded-md border-gray-100 font-medium outline-none"
               />
             </div>
           </div>
           <div className="flex gap-4 my-5">
             <div className="w-full">
-              <label htmlFor="firstName" className="block font-medium mb-2">
+              <label htmlFor="email" className="block font-medium mb-2">
                 Email
               </label>
               <input
                 type="email"
+                name="email"
+                onChange={handleChange}
                 className="px-2 py-2 border w-full rounded-md border-gray-100 font-medium outline-none"
               />
             </div>
             <div className="w-full">
-              <label htmlFor="firstName" className="block font-medium mb-2">
+              <label htmlFor="phone" className="block font-medium mb-2">
                 Phone Number
               </label>
               <input
                 type="number"
+                name="phone"
+                onChange={handleChange}
                 className="px-2 py-2 border w-full rounded-md border-gray-100 font-medium outline-none"
               />
             </div>
           </div>
-          <label htmlFor="firstName" className="block font-medium mb-2">
+          <label htmlFor="country" className="block font-medium mb-2">
             Country
           </label>
           <select
-            name=""
+            name="country"
+            onChange={handleChange}
             id=""
             className="w-full border p-2 border-gray-100 rounded-md outline-none"
           >
-            <option value="nigeria">Nigeria</option>
-            <option value="unitedKingdom">United Kingdom</option>
+            <option value="no_value">-- select country --</option>
+            {country_arr.map((country, index) => (
+              <option key={index} value={country}>
+                {country}
+              </option>
+            ))}
           </select>
-          <label htmlFor="firstName" className="block font-medium mt-8 mb-2">
+          <label htmlFor="message" className="block font-medium mt-8 mb-2">
             Message
           </label>
           <textarea
-            name=""
+            name="message"
+            onChange={handleChange}
             className="w-full border border-gray-100 h-40 p-2 rounded-md outline-none"
             id=""
           ></textarea>
           <button className="bg-red-600 text-white mt-5 rounded-md w-full py-2">
-            Submit
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
