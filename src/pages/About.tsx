@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ohipImg1 from "../assets/images/ohip-img-1.jpg";
 // import ohipImg2 from "../assets/images/ohip-img-2.png";
 import ohipImg5 from "../assets/images/ohip-img-5.png";
@@ -9,7 +10,7 @@ function About() {
   return (
     <>
       <section
-        className="relative min-h-screen max-[941px]:min-h-[80vh] flex items-center justify-center"
+        className="relative min-h-[50vh] max-[941px]:min-h-[80vh] flex items-center justify-center"
         style={{
           backgroundImage: `url(${ohipImg1})`,
           backgroundSize: "cover",
@@ -19,15 +20,15 @@ function About() {
       >
         <div className="absolute bg-blue-900/30 inset-0"></div>
         <div className="z-10">
-          <h2 className="text-white text-6xl max-[820px]:text-5xl font-semibold text-center mb-4">
+          <h2 className="text-white text-5xl max-[820px]:text-5xl font-semibold text-center mb-4">
             About OHIP Partnership
           </h2>
-          <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
+          {/* <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
             quisquam corporis exercitationem repudiandae. Maiores facilis
             doloribus ipsa aliquid similique corrupti suscipit tempora
             perferendis ut consequuntur. Id blanditiis ut cupiditate quos?
-          </p>
+          </p> */}
           {/* <Link
             to="/become-a-partner"
             className="bg-red-600 mt-10 block mx-auto w-52 text-center text-lg text-white px-4 py-3 rounded-sm hover:bg-red-700"
@@ -36,74 +37,57 @@ function About() {
           </Link> */}
         </div>
       </section>
-      <section>
-        <h2 className="text-center text-3xl uppercase font-semibold my-10">
+      <section className="max-w-6xl mx-auto py-20">
+        {/* <h2 className="text-center text-3xl uppercase font-semibold my-10">
           About Partnership
-        </h2>
-        <p className="max-w-6xl mx-auto text-lg text-pretty max-[860px]:px-8">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis
-          aliquid eum, atque exercitationem, necessitatibus, quis suscipit iure
-          saepe earum repudiandae quo. Doloremque, architecto? Repellat corporis
-          accusamus vel iure sit debitis dicta facilis labore quae iste, enim,
-          ratione qui recusandae incidunt. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Assumenda libero, blanditiis voluptate
-          cupiditate nobis distinctio a dolorem laudantium magnam facere! Odio
-          blanditiis, maxime alias laboriosam corporis odit officiis error
-          placeat nulla mollitia, nemo facilis perspiciatis repellendus et ipsam
-          soluta? Rem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h2> */}
+        <p className="text-lg text-pretty max-[860px]:px-8">
+          Gospel Pillars International is a dynamic, non-denominational church
+          movement founded by Dr. Isaiah Macwealth. With over a hundred branches
+          spanning four continents, the ministry is dedicated to spreading the
+          Gospel of Jesus Christ globally. ​
         </p>
-        <p className="max-w-6xl mx-auto text-lg text-pretty max-[860px]:px-8">
-          At tellus viverra sagittis feugiat elit potenti.. Odio enim auctor sed
-          lacinia. Pharetra non ut malesuada facilisis sed dolor viverra
-          consequat.. Ultricies aenean nisl leo duis morbi nisl risus.. Id
-          penatibus scelerisque in id justo eleifend nec diam purus.. Etiam orci
-          amet mi dui metus.. Pulvinar non sed viverra elementum magna egestas..
-          Aliquam nisl molestie neque nullam consequat volutpat morbi
-          ullamcorper.. Ultrices sed proin libero venenatis sit.Venenatis orci
-          cursus nisl quam tellus lacus aliquet vulputate. At tellus viverra
-          sagittis feugiat elit potenti.. Odio enim auctor sed lacinia. Pharetra
-          non ut malesuada facilisis sed dolor viverra consequat.. Ultricies
-          aenean nisl leo duis morbi nisl risus.. Id penatibus scelerisque in id
-          justo eleifend nec diam purus.. Etiam orci amet mi dui metus..
-          Pulvinar non sed viverra elementum magna egestas.. Aliquam nisl
-          molestie neque nullam consequat volutpat morbi ullamcorper.. Ultrices
-          sed proin libero venenatis sit.
+        <h2 className="text-2xl font-semibold my-4">Mission and Vision</h2>
+        <p className="text-lg text-pretty max-[860px]:px-8">
+          The church's vision is to reveal Jehovah as the Almighty and Yeshua,
+          His Son, as the only way to God and salvation. Their purpose is to
+          disseminate the knowledge of God's glory worldwide, aiming to restore
+          the fear of God and achieve the salvation of this generation. ​
         </p>
-        <p className="max-w-6xl mx-auto text-lg text-pretty max-[860px]:px-8">
-          Egestas nisl tellus eu arcu diam arcu velit aliquet.. Quam justo
-          nullam vel tempor donec feugiat.. Adipiscing felis vel faucibus
-          bibendum malesuada enim facilisi congue porttitor.. Suspendisse purus
-          amet dui odio id.. Iaculis molestie quis facilisis libero. Ultricies
-          vestibulum tincidunt pellentesque eu amet proin viverra penatibus
-          euismod.. Et lorem tristique et sagittis cursus odio lectus cursus.
-          Venenatis orci cursus nisl quam tellus lacus aliquet vulputate.
+        <h2 className="text-2xl font-semibold my-4">Global Presence</h2>
+        <p className="text-lg text-pretty max-[860px]:px-8">
+          Gospel Pillars Church has established a significant presence in the
+          United States, particularly in Dallas, Texas, where it invites
+          individuals from diverse backgrounds to discover and experience God's
+          ways. The church's global network reflects its commitment to reaching
+          all nations with the message of Christ.
         </p>
-        <p className="max-w-6xl mx-auto text-lg text-pretty max-[860px]:px-8">
-          Egestas nisl tellus eu arcu diam arcu velit aliquet.. Quam justo
-          nullam vel tempor donec feugiat.. Adipiscing felis vel faucibus
-          bibendum malesuada enim facilisi congue porttitor.. Suspendisse purus
-          amet dui odio id.. Iaculis molestie quis facilisis libero. Ultricies
-          vestibulum tincidunt pellentesque eu amet proin viverra penatibus
-          euismod.. Et lorem tristique et sagittis cursus odio lectus cursus.
+        <h2 className="text-2xl font-semibold my-4">Leadership</h2>
+        <p className="text-lg text-pretty max-[860px]:px-8">
+          Dr. Isaiah Macwealth, also known as Isaiah Wealth, is the Senior
+          Pastor of Gospel Pillars International Churches worldwide. He is a
+          renowned author, philanthropist, and the founder of the OneSound
+          Revival Fellowship, which encompasses a TV house, a Bible College, and
+          a charity foundation. In November 2023, he inaugurated the ministry
+          headquarters, the Ark of Light for All Nations, in Ikeja, Lagos. This
+          mega church has become a gospel hotspot, hosting thousands of
+          worshippers weekly and housing a Food and Emergency Bank that serves
+          various communities with free food, clothing, and emergency supplies.
         </p>
-        <p className="max-w-6xl mx-auto text-lg text-pretty max-[860px]:px-8">
-          At tellus viverra sagittis feugiat elit potenti.. Odio enim auctor sed
-          lacinia. Pharetra non ut malesuada facilisis sed dolor viverra
-          consequat.. Ultricies aenean nisl leo duis morbi nisl risus.. Id
-          penatibus scelerisque in id justo eleifend nec diam purus.. Etiam orci
-          amet mi dui metus.. Pulvinar non sed viverra elementum magna egestas..
-          Aliquam nisl molestie neque nullam consequat volutpat morbi
-          ullamcorper.. Ultrices sed proin libero venenatis sit.
+        <h2 className="text-2xl font-semibold my-4">Community Engagement</h2>
+        <p className="text-lg text-pretty max-[860px]:px-8">
+          The church is actively involved in community outreach, offering
+          programs and platforms such as "As and Bs for Jesus" (ABJ) and
+          "YouGenius" to engage youths and students. These initiatives aim to
+          rehabilitate young people and reform communities worldwide.
         </p>
-        <p className="max-w-6xl mx-auto text-lg text-pretty max-[860px]:px-8">
-          Lorem ipsum dolor sit amet consectetur. Semper risus sit ipsum urna
-          eget nulla viverra.. Faucibus ornare sit integer neque ipsum nunc diam
-          fermentum.. Fermentum scelerisque a sed ipsum augue sagittis duis ac
-          urna.. Quam odio nullam ornare enim integer tellus dui.. Nulla
-          praesent enim imperdiet quam. Sapien convallis lectus egestas facilisi
-          massa amet dui nunc ultrices.. Pellentesque nisi enim mauris nisi
-          sollicitudin lobortis nulla.. Venenatis orci cursus nisl quam tellus
-          lacus aliquet vulputate.
+        <p className="text-lg text-pretty max-[860px]:px-8">
+          For more information or to get involved, visit their official website
+          at{" "}
+          <Link to={"gospelpillars.org"} className="text-blue-500">
+            gospelpillars.org
+          </Link>
+          .
         </p>
       </section>
       {/* <section className="min-h-screen flex justify-center gap-16 items-center max-[860px]:mt-5 max-[860px]:flex-col-reverse">

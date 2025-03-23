@@ -1,71 +1,72 @@
 "use client";
 import g20 from "../assets/images/g20.jpg";
 import fyh1 from "../assets/images/1.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import videoSrc from "../assets/images/video.png";
-import HowToPartner, { CarouselItem } from "../components/Cards/HowToPartner";
-import { FaCheck } from "react-icons/fa6";
-import Carousel from "../components/Animation/Carousel/Carousel";
-import { useEffect, useState } from "react";
-import howToPartnerImg1 from "../assets/images/how-to-partner.png";
+// import { CarouselItem } from "../components/Cards/HowToPartner";
+// import { FaCheck } from "react-icons/fa6";
+// import Carousel from "../components/Animation/Carousel/Carousel";
+// import { useEffect, useState } from "react";
+// import howToPartnerImg1 from "../assets/images/how-to-partner.png";
 import Accordion from "../components/Accordion";
+// import VideoPlaceholder from "../components/placeholder/VideoPlaceholder";
 
 function G20() {
-  const DEFAULT_ITEMS: CarouselItem[] = [
-    {
-      title: "Medium length section heading goes here",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
-      image: howToPartnerImg1,
-    },
-    {
-      title: "Medium length section heading goes here",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+  // const DEFAULT_ITEMS: CarouselItem[] = [
+  //   {
+  //     title: "Medium length section heading goes here",
+  //     description:
+  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+  //     image: howToPartnerImg1,
+  //   },
+  //   {
+  //     title: "Medium length section heading goes here",
+  //     description:
+  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
 
-      image: howToPartnerImg1,
-    },
-    {
-      title: "Medium length section heading goes here",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+  //     image: howToPartnerImg1,
+  //   },
+  //   {
+  //     title: "Medium length section heading goes here",
+  //     description:
+  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
 
-      image: howToPartnerImg1,
-    },
-    {
-      title: "Medium length section heading goes here",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+  //     image: howToPartnerImg1,
+  //   },
+  //   {
+  //     title: "Medium length section heading goes here",
+  //     description:
+  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
 
-      image: howToPartnerImg1,
-    },
-    {
-      title: "Medium length section heading goes here",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
-      image: howToPartnerImg1,
-    },
-  ];
-  const [index, setIndex] = useState(0);
+  //     image: howToPartnerImg1,
+  //   },
+  //   {
+  //     title: "Medium length section heading goes here",
+  //     description:
+  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam.",
+  //     image: howToPartnerImg1,
+  //   },
+  // ];
+  // const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
-    }, 5000); // Change slide every 5 seconds
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
+  //   }, 5000); // Change slide every 5 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  //   return () => clearInterval(interval); // Cleanup on unmount
+  // }, []);
 
-  const nextSlide = () => setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
-  const prevSlide = () =>
-    setIndex(
-      (prev) => (prev - 1 + DEFAULT_ITEMS.length) % DEFAULT_ITEMS.length
-    );
+  // const nextSlide = () => setIndex((prev) => (prev + 1) % DEFAULT_ITEMS.length);
+  // const prevSlide = () =>
+  //   setIndex(
+  //     (prev) => (prev - 1 + DEFAULT_ITEMS.length) % DEFAULT_ITEMS.length
+  //   );
   return (
     <>
       <main className="">
         <section
-          className="relative min-h-screen flex items-center justify-center"
+          className="relative min-h-[60vh] flex items-center justify-center"
           style={{
             backgroundImage: `url(${g20})`,
             backgroundSize: "cover",
@@ -82,7 +83,7 @@ function G20() {
               Your partnership helps spread the Gospel, support ministries, and
               transform lives worldwide. Be a part of this mission.
             </p>
-            <div className="flex text-center mt-10 gap-3 justify-center">
+            {/* <div className="flex text-center mt-10 gap-3 justify-center">
               <Link
                 to="/become-a-partner"
                 className="bg-white w-40 border-white border text-center text-lg text-gray-900 px-4 py-2 rounded-sm hover:bg-red-700"
@@ -95,10 +96,29 @@ function G20() {
               >
                 Button
               </Link>
-            </div>
+            </div> */}
           </div>
         </section>
-        <section className="p-5  mt-10">
+        <section className="flex min-h-[80vh] max-[853px]:flex-col max-[853px]:py-20 justify-center items-center max-w-5xl gap-16 mx-auto">
+          <div className="w-full max-w-md max-[853px]:max-w-full max-[853px]:px-8 text-lg">
+            <p className="mb-8">
+              On behalf of the Prophet, we welcome all partners to this
+              community in the name of Jesus, and we thank you for being a
+              partner with the Prophet. Because you are signed up for
+              partnership, you will be receiving this communication from the
+              prophet's office regularly as his way of staying in touch with
+              you.
+            </p>
+            <p className="mb-2">
+              As we begin again, it is important we review what this
+              relationship is about.
+            </p>
+          </div>
+          <div className="w-full rounded-2xl h-[30rem] flex justify-center items-center">
+            <img src={videoSrc} alt="" />
+          </div>
+        </section>
+        {/* <section className="p-5  mt-10">
           <h2 className="text-3xl font-semibold text-center">About G20</h2>
           <p className="text-justify max-w-6xl  mx-auto mt-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
@@ -169,36 +189,6 @@ function G20() {
             </p>
           </div>
         </section>
-        {/* <section className="flex flex-wrap justify-center items-center gap-10 min-h-[40vh] py-20">
-          <div className="flex w-[18rem] flex-col items-center text-center shadow-lg p-4 rounded-2xl">
-            <img src={g20Icon1} alt="" className="w-10" />
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-          </div>
-          <div className="flex w-[18rem] flex-col items-center text-center shadow-lg p-4 rounded-2xl">
-            <img src={g20Icon1} alt="" className="w-10" />
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-          </div>
-          <div className="flex w-[18rem] flex-col items-center text-center shadow-lg p-4 rounded-2xl">
-            <img src={g20Icon1} alt="" className="w-10" />
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-          </div>
-          <div className="flex w-[18rem] flex-col items-center text-center shadow-lg p-4 rounded-2xl">
-            <img src={g20Icon1} alt="" className="w-10" />
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-          </div>
-        </section> */}
         <section className="min-h-[70vh] mx-auto max-w-5xl py-20">
           <h2 className="text-4xl max-[853px]:text-3xl mb-3 text-center font-medium">
             How to Become a Partner
@@ -376,7 +366,7 @@ function G20() {
           <button className="bg-black text-white py-2 px-10 rounded-md mx-auto mt-10 block">
             Join Now
           </button>
-        </section>
+        </section> */}
         <section
           className="relative h-[35vh] mt-20 flex items-center justify-center"
           style={{
@@ -394,11 +384,11 @@ function G20() {
           <h2 className="text-4xl text-center mb-3 font-semibold">
             Frequently Asked Questions
           </h2>
-          <p className="text-sm text-center">
+          {/* <p className="text-sm text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             varius enim in eros <br />
             elementum tristique.
-          </p>
+          </p> */}
           <Accordion />
         </section>
       </main>

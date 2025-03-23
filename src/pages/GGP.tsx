@@ -70,7 +70,7 @@ function GGP() {
     <>
       <main className="">
         <section
-          className="relative min-h-screen flex items-center justify-center"
+          className="relative min-h-[70vh] flex items-center justify-center"
           style={{
             backgroundImage: `url(${g20})`,
             backgroundSize: "cover",
@@ -80,17 +80,17 @@ function GGP() {
         >
           <div className="absolute bg-blue-900/30 inset-0"></div>
           <div className="z-10 max-w-4xl">
-            <h2 className="text-white text-6xl max-[820px]:text-4xl font-semibold text-center mb-4">
+            <h2 className="text-white text-5xl max-[820px]:text-4xl font-semibold text-center mb-4">
               WELCOME TO GLOBAL GOSPEL PARTNERSHIP (GGP)
             </h2>
-            <p className="text-white max-w-4xl mx-auto max-[820px]:max-w-xl text-[20px] text-center max-[490px]:px-8">
+            <p className="text-white max-w-4xl mx-auto max-[820px]:max-w-xl text-[18px] text-center max-[490px]:px-8">
               A monthly media partnership that gives you the opportunity to give
               towards ministry expansion via the airwaves
             </p>
-            <p className="text-white max-w-2xl mx-auto max-[820px]:max-w-xl text-[20px] text-center max-[490px]:px-8">
+            <p className="text-white max-w-2xl mx-auto max-[820px]:max-w-xl text-[18px] text-center max-[490px]:px-8">
               Formerly known as Onesound Higher Impact Partnership (OHIP).
             </p>
-            <div className="flex text-center mt-10 gap-3 justify-center">
+            <div className="flex text-center mt-16 gap-3 justify-center">
               <Link
                 to="/register"
                 className="bg-red-700 text-center text-lg text-white px-8 py-2 rounded-sm"
@@ -494,11 +494,11 @@ function GGP() {
           <h2 className="text-4xl text-center mb-3 font-semibold">
             Frequently Asked Questions
           </h2>
-          <p className="text-sm text-center">
+          {/* <p className="text-sm text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             varius enim in eros <br />
             elementum tristique.
-          </p>
+          </p> */}
           <Accordion />
         </section>
       </main>

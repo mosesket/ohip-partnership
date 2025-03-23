@@ -23,10 +23,9 @@ function Section3() {
             The Power of Worship: How Praising God Transforms Your Life
           </h2>
           <p className="text-gray-300 text-sm pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            necessitatibus dolorum neque ducimus ipsum tempore, blanditiis magni
-            modi ex sint voluptate iure, possimus quod nobis natus suscipit
-            dicta et esse!
+            Explore how worship strengthens faith, brings peace, and unlocks
+            divine blessings, leading to a deeper connection with God and a
+            transformed life.
           </p>
         </div>
       </div>

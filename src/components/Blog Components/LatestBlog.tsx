@@ -9,9 +9,7 @@ function LatestBlog() {
           backgroundImage="https://cdn.pixabay.com/photo/2025/02/02/14/06/bird-9376831_1280.jpg"
           title="The Power of Worship: How Praising God Transforms Your Life"
           category="SUNDAY SERVICE"
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-  necessitatibus dolorum neque ducimus ipsum tempore, blanditiis magni
-  modi ex sint voluptate iure."
+          content="Shows how praising God deepens faith, brings joy, and transforms your life."
           date="Nov 26"
           readTime="40"
         />
