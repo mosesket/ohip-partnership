@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import registerImage from "../assets/images/register.png";
 import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
 
