@@ -215,6 +215,7 @@ function Home() {
         />
       </section> */}
       <section className="min-h-[40vh] flex justify-center items-center gap-16 max-[860px]:flex-wrap max-[860px]:gap-8 p-8">
+
         <div className="group transition-all duration-300 hover:scale-105">
           <Link
             to="/register?partner=ggp"
@@ -234,7 +235,7 @@ function Home() {
         <div className="group transition-all duration-300 hover:scale-105">
           <Link
             to="/register?partner=g20"
-            className="flex flex-col items-center justify-center w-64 h-55 bg-gradient-to-br from-red-700 to-red-900 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
+            className="flex flex-col items-center justify-center w-64 h-55 bg-gradient-to-br from-red-600 to-red-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-300"></div>
             <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mb-4">
