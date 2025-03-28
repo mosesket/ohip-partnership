@@ -91,12 +91,12 @@ function GGP() {
               Formerly known as Onesound Higher Impact Partnership (OHIP).
             </p>
             <div className="flex text-center mt-16 gap-3 justify-center">
-              <Link
-                to="/register"
+              <a
+                href="https://app.macwealth.org"
                 className="bg-red-700 text-center text-lg text-white px-8 py-2 rounded-sm"
               >
-                Become a Partner
-              </Link>
+                Login to Dashboard
+              </a>
             </div>
           </div>
         </section>

@@ -10,8 +10,31 @@ import Footer from "./components/Footer/Footer";
 import Register from "./pages/Register";
 import { Toaster } from "sonner";
 import ScrollToTop from "./components/ScrollToTop";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const s1 = document.createElement("script");
+    const s0 = document.getElementsByTagName("script")[0];
+    
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/67e66e8460e82019123287a8/1ine1ve5q";
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    
+    if (s0 && s0.parentNode) {
+      s0.parentNode.insertBefore(s1, s0);
+    } else {
+      document.head.appendChild(s1);
+    }
+
+    return () => {
+      if (s1 && s1.parentNode) {
+        s1.parentNode.removeChild(s1);
+      }
+    };
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
@@ -27,8 +50,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/partnership/g20" element={<G20 />} />
-        <Route path="/partnership/ggp" element={<GGP />} />
+        <Route path="/g20" element={<G20 />} />
+        <Route path="/ggp" element={<GGP />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

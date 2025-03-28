@@ -41,7 +41,7 @@ function Header() {
               </li> */}
               <li>
                 <Link
-                  to="/partnership/g20"
+                  to="/g20"
                   className="block px-4 py-2 hover:bg-gray-200"
                 >
                   G20
@@ -49,7 +49,7 @@ function Header() {
               </li>
               <li>
                 <Link
-                  to="/partnership/ggp"
+                  to="/ggp"
                   className="block px-4 py-2 hover:bg-gray-200"
                 >
                   GGP
@@ -82,11 +82,10 @@ function Header() {
           </li>
           <li>
             <a
-              href="#"
-              // href="https://partner.myketnology.com/"
+              href="https://app.macwealth.org"
               className="bg-red-600 text-white px-4 py-3 rounded-sm hover:bg-red-700"
             >
-              Become a Partner
+              Login to Dashboard
             </a>
           </li>
         </ul>

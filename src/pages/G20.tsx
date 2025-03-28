@@ -83,20 +83,14 @@ function G20() {
               Your partnership helps spread the Gospel, support ministries, and
               transform lives worldwide. Be a part of this mission.
             </p>
-            {/* <div className="flex text-center mt-10 gap-3 justify-center">
-              <Link
-                to="/become-a-partner"
-                className="bg-white w-40 border-white border text-center text-lg text-gray-900 px-4 py-2 rounded-sm hover:bg-red-700"
+            <div className="flex text-center mt-16 gap-3 justify-center">
+              <a
+                href="https://app.macwealth.org"
+                className="bg-red-700 text-center text-lg text-white px-8 py-2 rounded-sm"
               >
-                Button
-              </Link>
-              <Link
-                to="/become-a-partner"
-                className="border-white border w-40 text-center text-lg text-white px-4 py-2 rounded-sm hover:bg-red-700"
-              >
-                Button
-              </Link>
-            </div> */}
+                Login to Dashboard
+              </a>
+            </div>
           </div>
         </section>
         <section className="flex min-h-[80vh] max-[853px]:flex-col max-[853px]:py-20 justify-center items-center max-w-5xl gap-16 mx-auto">

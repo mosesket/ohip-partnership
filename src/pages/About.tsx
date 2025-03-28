@@ -21,7 +21,7 @@ function About() {
         <div className="absolute bg-blue-900/30 inset-0"></div>
         <div className="z-10">
           <h2 className="text-white text-5xl max-[820px]:text-5xl font-semibold text-center mb-4">
-            About OHIP Partnership
+            About
           </h2>
           {/* <p className="text-white max-w-3xl max-[820px]:max-w-xl text-[14px] text-center max-[490px]:px-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
